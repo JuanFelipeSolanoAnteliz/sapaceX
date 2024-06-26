@@ -1,0 +1,19 @@
+
+@font-face {
+    font-family: 'roboto-Bold' ;
+    src: url(../storage/fonts/Roboto-Bold.ttf);
+}
+
+@font-face {
+    font-family: 'roboto-light' ;
+    src: url(../storage/fonts/Roboto-Light.ttf);
+}
+
+@font-face {
+    font-family: 'roboto-Regular';
+    src: url(../storage/fonts/Roboto-Regular.ttf);
+}
+:root{
+    --color-one--: #13132A;
+    --withe--:#FFF;
+}
