@@ -97,15 +97,41 @@ export const rocketPageContent = async (docs)=>{
                         
                         <div class="asd"></div>
                         
-                        <h3>Information</h3>
+                        <h3>Rocket Information</h3>
                         
                         <span class="line"></span>
                         
                         <div class="content__information">
                             <div class="features__information">
-                                <small>Type</small>
-                                <span>rocket</span>
+                                <small>Type:</small>
+                                <span>${element.type}</span>
                             </div>
+
+                            <div class="features__information">
+                                <small>rocket in service:</small>
+                                <span>${element.active === false ? "Inactive" : "Active"}</span>
+                            </div>
+
+                            <div class="features__information">
+                                <small>Number Stages: </small>
+                                <span>${element.stages}</span>
+                            </div>
+
+                            <div class="features__information">
+                                <small>Number of propellants: </small>
+                                <span>0</span>
+                            </div>
+
+                            <div class="features__information">
+                                <small>Landing Legs: </small>
+                                <span>${element.landing_legs.number}</span>
+                            </div>
+                            
+                            <div class="features__information">
+                                <small>Landing Legs Material: </small>
+                                <span>${element.landing_legs.material === null ? "Ninguno" : element.landing_legs.material }</span>
+                            </div>
+
                         </div>
 
                     </article>
