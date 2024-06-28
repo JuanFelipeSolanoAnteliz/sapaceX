@@ -236,12 +236,13 @@ body{
     display: flex;
     width: 100%;
     color: var(--withe--);
+    gap: 10px;
 }
 
 .features .progressbar{
     /* background: navy; */
     width: 60%;
-    font-family: 'roboto-Bold' ;
+    font-family: 'roboto-regular' ;
 }
 
 .progressbar progress{
@@ -249,12 +250,13 @@ body{
 }
 
 .features .cifras{
+    /* background: #4b7aaf; */
     display: flex;
     justify-content: center;
     flex-direction: column;
-    
     font-family: 'roboto-light' ;
 }
+
 
 .footer{
     width: 100%;

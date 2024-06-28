@@ -9,7 +9,7 @@ export const rocketPageContent = async (docs)=>{
         // console.log(element)
         plantilla += /*html*/`
         <header id="header" class="header">
-            <h1>${element.name}</h1>
+            <h1>${element.name.toUpperCase()}</h1>
         </header>
 
         <main class="main">
@@ -70,8 +70,8 @@ export const rocketPageContent = async (docs)=>{
                             <div>
                                 <strong>Atmospheric acceleration</strong>
                                 <p>23.60 % </p>
-                                <p>420 kN</p>
-                                <p>94.000 Lbf</p>
+                                <p>${element.engines.thrust_sea_level.kN} kN</p>
+                                <p>${element.engines.thrust_sea_level.lbf} Lbf</p>
                             </div>
                         </div>
                         
@@ -81,10 +81,10 @@ export const rocketPageContent = async (docs)=>{
                         
                         <div class="progress-bar">
                             <div>
-                                <strong>Atmospheric acceleration</strong>
+                                <strong>Speed in space</strong>
                                 <p>23.60 % </p>
-                                <p>420 kN</p>
-                                <p>94.000 Lbf</p>
+                                <p>${element.engines.thrust_vacuum.kN} kN</p>
+                                <p>${element.engines.thrust_vacuum.lbf} Lbf</p>
                             </div>
                         </div>
                     </div>
@@ -129,7 +129,7 @@ export const rocketPageContent = async (docs)=>{
                             
                             <div class="features__information">
                                 <small>Landing Legs Material: </small>
-                                <span>${element.landing_legs.material === null ? "Ninguno" : element.landing_legs.material }</span>
+                                <span>${element.landing_legs.material === null ? "none" : element.landing_legs.material }</span>
                             </div>
 
                         </div>
@@ -160,7 +160,7 @@ export const rocketPageContent = async (docs)=>{
                         </div>
                         
                         <div class="features__information">
-                            <small>Avability: </small>
+                            <small>Avabilityc: </small>
                             <span>${element.engines.layout}</span>
                         </div>
                         
@@ -184,26 +184,68 @@ export const rocketPageContent = async (docs)=>{
             <article class="sidebar__rigth">
                 <div class="features">
                     <div class="progressbar">
-                        <h3>Title</h3>
-                        <progress value="30" max="100"></progress>
+                        <h3>Diameter: </h3>
+                        <progress value="${element.diameter.meters}" max="100"></progress>
                     </div>
-                    <small class="cifras"> 1232.1003</small>
+                    <small class="cifras">
+                            <p>${element.diameter.meters} M</p>
+                            <p>${element.diameter.feet} F</p>
+                    </small>
                 </div>
 
                 <div class="features">
                     <div class="progressbar">
-                        <h3>Title</h3>
+                        <h3>Low Earth Orbit: </h3>
                         <progress value="30" max="100"></progress>
                     </div>
-                    <small class="cifras"> 1232.1003</small>
+                    <small class="cifras"> 
+                        <p>${element.payload_weights[0].kg} KG</p>
+                        <p>${element.payload_weights[0].lb} LB</p>
+                    </small>
                 </div>
 
                 <div class="features">
                     <div class="progressbar">
-                        <h3>Title</h3>
+                        <h3>Rocket height: </h3>
                         <progress value="30" max="100"></progress>
                     </div>
-                    <small class="cifras"> 1232.1003</small>
+                    <small class="cifras">
+                        <p>${element.height.meters} M</p>
+                        <p>${element.height.feet} F</p>
+                    </small>
+                </div>
+
+                <div class="features">
+                <div class="progressbar">
+                    <h3>Rocket weight: </h3>
+                    <progress value="30" max="100"></progress>
+                </div>
+                    <small class="cifras">
+                        <p>${element.mass.kg} KG</p>
+                        <p>${element.mass.lb} LB</p>
+                    </small>
+                </div>
+
+                <div class="features">
+                <div class="progressbar">
+                    <h3> Diameter Rocket shield: </h3>
+                    <progress value="30" max="100"></progress>
+                </div>
+                    <small class="cifras">
+                        <p>${element.second_stage.payloads.composite_fairing.diameter.meters} KG</p>
+                        <p>${element.second_stage.payloads.composite_fairing.diameter.feet} LB</p>
+                    </small>
+                </div>
+
+                <div class="features">
+                <div class="progressbar">
+                    <h3>Height Rocket shield: </h3>
+                    <progress value="30" max="100"></progress>
+                </div>
+                    <small class="cifras">
+                        <p>${element.second_stage.payloads.composite_fairing.height.meters} KG</p>
+                        <p>${element.second_stage.payloads.composite_fairing.height.feet} LB</p>
+                    </small>
                 </div>
 
             </article>

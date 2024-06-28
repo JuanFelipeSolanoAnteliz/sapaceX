@@ -34,19 +34,20 @@ const reloadEventPages = async()=>{
             if(e.target.tagName === 'BUTTON'){
                 
                 let buttonId = e.target.id;
-                
                 let newRocket = await rocketsPage(buttonId);
                 let rocketContent = newRocket.docs;
                 let rocketCoso = await rocketPageContent(rocketContent);
                 
                 let img = await rocketsImage(buttonId);
                 let imgLinks = await innerImages(img)
-
+                
+                console.log(imgLinks)
                 body.innerHTML = '';
                 body.innerHTML += rocketCoso;
+                let carousel = document.querySelector(".carousel");
                 carousel.innerHTML = ''
                 carousel.innerHTML += imgLinks;
-                console.log(imgLinks)
+                
                 await reloadEventPages();
             }
         })
