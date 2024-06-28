@@ -66,10 +66,11 @@ export const rocketPageContent = async (docs)=>{
                 <section class="progressbar__round">
 
                 
-                        <div class="progress-bar">
+                        <div class="progress-bar" style="background:radial-gradient(closest-side, rgb(20, 20, 20) 79%, transparent 80% 100%),
+                                                                    conic-gradient(from 180deg, rgb(94, 204, 252)  ${(element.engines.thrust_sea_level.kN * 100 / 1780).toFixed(2)}%, rgba(255, 192, 203, 0) 0);  ">
                             <div>
                                 <strong>Atmospheric acceleration</strong>
-                                <p>23.60 % </p>
+                                <p>${(element.engines.thrust_sea_level.kN * 100 / 1780).toFixed(2)}% </p>
                                 <p>${element.engines.thrust_sea_level.kN} kN</p>
                                 <p>${element.engines.thrust_sea_level.lbf} Lbf</p>
                             </div>
@@ -79,10 +80,13 @@ export const rocketPageContent = async (docs)=>{
                             <img src="./storage/img/jetpack cat.gif" alt="">
                         </article>
                         
-                        <div class="progress-bar">
+                        <div class="progress-bar"
+                        style="background:radial-gradient(closest-side, rgb(20, 20, 20) 79%, transparent 80% 100%),
+                                                                    conic-gradient(from 180deg, rgb(94, 204, 252)  ${(element.engines.thrust_vacuum.kN * 100 / 1960).toFixed(2)}%, rgba(255, 192, 203, 0) 0);  "
+                        >
                             <div>
                                 <strong>Speed in space</strong>
-                                <p>23.60 % </p>
+                                <p>${(element.engines.thrust_vacuum.kN * 100 / 1960).toFixed(2)}% </p>
                                 <p>${element.engines.thrust_vacuum.kN} kN</p>
                                 <p>${element.engines.thrust_vacuum.lbf} Lbf</p>
                             </div>
