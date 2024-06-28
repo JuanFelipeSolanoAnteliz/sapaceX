@@ -1,17 +1,18 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="/css/style.css">
-    <script type="module" src="/js/main.js"></script>
-</head>
-<body id="body">
-    <header id="header" class="header">
-        <!-- <h1>Rocket name</h1> -->
-    </header>
-    <main class="main">
+
+import { rocketsPage, allRockets } from "../module/app.js"
+// let data = await rocketsPage(1)
+// let docs = data.docs;
+export const rocketPageContent = async (docs)=>{
+    // console.log(docs)
+    let plantilla = '';
+    docs.forEach(element => {
+        // console.log(element)
+        plantilla += /*html*/`
+        <header id="header" class="header">
+            <h1>${element.name}</h1>
+        </header>
+
+        <main class="main">
         <!-- <img class="background" src="./storage/img/giphy.webp" alt=""> -->
         <section class="main__section__content">
             <!-- -----------------------------side bar left---------------------------------- -->
@@ -21,13 +22,9 @@
                         <div class="img">
                             <img src="./storage/img/mech.svg" alt="">
                         </div>
-                        <h3 >Title</h3>
+                        <h3 >Description</h3>
                     </div>
-                    <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Odio asperiores quia tempora! Recusandae maiores atque, magnam, 
-                        pariatur quibusdam facere voluptatum cupiditate in ullam laudantium 
-                        voluptates minus nisi fuga veritatis! Minus.
-                    </small>
+                    <small>${element.description}</small>
                 </div>
                 <div class="description__content">
                     <div class="description__content">
@@ -35,13 +32,31 @@
                             <div class="img">
                                 <img src="./storage/img/mech.svg" alt="">
                             </div>
-                            <h3 >Title</h3>
+                            <h3 >The estimated cost per rocket launch</h3>
                         </div>
-                    <small>Lorem ipsum dolor sit, amet consectetur adipisicing elit. 
-                        Odio asperiores quia tempora! Recusandae maiores atque, magnam, 
-                        pariatur quibusdam facere voluptatum cupiditate in ullam laudantium 
-                        voluptates minus nisi fuga veritatis! Minus.
-                    </small>
+                    <small>  $${element.cost_per_launch}</small>
+                </div>
+
+                <div class="description__content">
+                    <div class="description__content">
+                        <div class="title__section">
+                            <div class="img">
+                                <img src="./storage/img/mech.svg" alt="">
+                            </div>
+                            <h3 >First Flight</h3>
+                        </div>
+                    <small>${element.first_flight}</small>
+                </div>                
+
+                <div class="description__content">
+                    <div class="description__content">
+                        <div class="title__section">
+                            <div class="img">
+                                <img src="./storage/img/mech.svg" alt="">
+                            </div>
+                            <h3>Read more about the coete</h3>
+                        </div>
+                    <small>${element.wikipedia}</small>
                 </div>
             </article>
             <!-- -----------------------------side bar left---------------------------------- -->
@@ -181,9 +196,28 @@
             </a>
 
         </section>
-        <div id="pagination" class="pagination">
-            <button id="" >1</button>
-        </div>
+        <article class=pagination__content>
+          <div id="pagination" class="pagination"></div> 
+        </article>
     </footer>
-</body>
-</html>
+        `; 
+    });
+    return plantilla;
+}
+
+
+
+export const InnerPagination = async(data) =>{
+    let plantilla = '';
+    for(let i = 1; i <= data.docs.length; i++){
+        plantilla +=/*html*/`
+        <button id="${i}" class="buttons">${i}</button>
+        `;
+    }
+    return plantilla;
+}
+
+let dataRockets = await allRockets();
+let allItems = dataRockets.docs
+let totalPages = allItems.length
+
