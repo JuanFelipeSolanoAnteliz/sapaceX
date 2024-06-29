@@ -34,7 +34,7 @@ export const rocketPageContent = async (docs)=>{
                             </div>
                             <h3 >The estimated cost per rocket launch</h3>
                         </div>
-                    <small>  $${element.cost_per_launch}</small>
+                    <small>  $${element.cost_per_launch.toLocaleString('de-DE')}</small>
                 </div>
 
                 <div class="description__content">
@@ -56,7 +56,7 @@ export const rocketPageContent = async (docs)=>{
                             </div>
                             <h3>Read more about the coete</h3>
                         </div>
-                    <small>${element.wikipedia}</small>
+                    <small><a href="${element.wikipedia}">wikipedia</a></small>
                 </div>
             </article>
             <!-- -----------------------------side bar left---------------------------------- -->
@@ -72,7 +72,7 @@ export const rocketPageContent = async (docs)=>{
                                 <strong>Atmospheric acceleration</strong>
                                 <p>${(element.engines.thrust_sea_level.kN * 100 / 1780).toFixed(2)}% </p>
                                 <p>${element.engines.thrust_sea_level.kN} kN</p>
-                                <p>${element.engines.thrust_sea_level.lbf} Lbf</p>
+                                <p>${element.engines.thrust_sea_level.lbf.toLocaleString('de-DE')} Lbf</p>
                             </div>
                         </div>
                         
@@ -88,7 +88,7 @@ export const rocketPageContent = async (docs)=>{
                                 <strong>Speed in space</strong>
                                 <p>${(element.engines.thrust_vacuum.kN * 100 / 1960).toFixed(2)}% </p>
                                 <p>${element.engines.thrust_vacuum.kN} kN</p>
-                                <p>${element.engines.thrust_vacuum.lbf} Lbf</p>
+                                <p>${element.engines.thrust_vacuum.lbf.toLocaleString('de-DE')} Lbf</p>
                             </div>
                         </div>
                     </div>
@@ -185,11 +185,12 @@ export const rocketPageContent = async (docs)=>{
             <!-- -------------------------------- center ------------------------------------ -->
 
             <!-- ----------------------------- sidebar rigth -------------------------------- -->
+
             <article class="sidebar__rigth">
                 <div class="features">
                     <div class="progressbar">
                         <h3>Diameter: </h3>
-                        <progress value="${element.diameter.meters}" max="100"></progress>
+                        <progress value="${(element.diameter.meters * 100 / 12).toFixed(2)}" max="100"></progress>
                     </div>
                     <small class="cifras">
                             <p>${element.diameter.meters} M</p>
@@ -200,10 +201,10 @@ export const rocketPageContent = async (docs)=>{
                 <div class="features">
                     <div class="progressbar">
                         <h3>Low Earth Orbit: </h3>
-                        <progress value="30" max="100"></progress>
+                        <progress value="${element.payload_weights[0].kg * 100 / 150000}" max="100"></progress>
                     </div>
                     <small class="cifras"> 
-                        <p>${element.payload_weights[0].kg} KG</p>
+                        <p>${(element.payload_weights[0].kg).toLocaleString('de-DE')} KG</p>
                         <p>${element.payload_weights[0].lb} LB</p>
                     </small>
                 </div>
@@ -211,7 +212,7 @@ export const rocketPageContent = async (docs)=>{
                 <div class="features">
                     <div class="progressbar">
                         <h3>Rocket height: </h3>
-                        <progress value="30" max="100"></progress>
+                        <progress value="${element.height.meters * 100 / 118}" max="100"></progress>
                     </div>
                     <small class="cifras">
                         <p>${element.height.meters} M</p>
@@ -222,33 +223,33 @@ export const rocketPageContent = async (docs)=>{
                 <div class="features">
                 <div class="progressbar">
                     <h3>Rocket weight: </h3>
-                    <progress value="30" max="100"></progress>
+                    <progress value="${element.mass.kg * 100 / 1420788}" max="100"></progress>
                 </div>
                     <small class="cifras">
-                        <p>${element.mass.kg} KG</p>
-                        <p>${element.mass.lb} LB</p>
+                        <p>${(element.mass.kg).toLocaleString('de-DE')} KG</p>
+                        <p>${(element.mass.lb).toLocaleString('de-DE')} LB</p>
                     </small>
                 </div>
 
                 <div class="features">
                 <div class="progressbar">
                     <h3> Diameter Rocket shield: </h3>
-                    <progress value="30" max="100"></progress>
+                    <progress value="${element.second_stage.payloads.composite_fairing.diameter.meters * 100 / 5.2}" max="100"></progress>
                 </div>
                     <small class="cifras">
-                        <p>${element.second_stage.payloads.composite_fairing.diameter.meters} KG</p>
-                        <p>${element.second_stage.payloads.composite_fairing.diameter.feet} LB</p>
+                        <p>${element.second_stage.payloads.composite_fairing.diameter.meters === null ? '': element.second_stage.payloads.composite_fairing.diameter.meters + ' KG'} </p>
+                        <p>${element.second_stage.payloads.composite_fairing.diameter.feet  === null ? '': element.second_stage.payloads.composite_fairing.diameter.feet + ' LB' } </p>
                     </small>
                 </div>
 
                 <div class="features">
                 <div class="progressbar">
                     <h3>Height Rocket shield: </h3>
-                    <progress value="30" max="100"></progress>
+                    <progress value="${element.second_stage.payloads.composite_fairing.height.meters * 100 / 13}" max="100"></progress>
                 </div>
                     <small class="cifras">
-                        <p>${element.second_stage.payloads.composite_fairing.height.meters} KG</p>
-                        <p>${element.second_stage.payloads.composite_fairing.height.feet} LB</p>
+                        <p>${element.second_stage.payloads.composite_fairing.height.meters  === null ? '': element.second_stage.payloads.composite_fairing.height.meters + ' KG'} </p>
+                        <p>${element.second_stage.payloads.composite_fairing.height.feet  === null ? '': element.second_stage.payloads.composite_fairing.height.feet +' LB'}</p>
                     </small>
                 </div>
 
@@ -261,12 +262,12 @@ export const rocketPageContent = async (docs)=>{
     <footer class="footer">
         <section class="footer__section">
             <a href="#">
-                <img src="./storage/img/accelerate-svgrepo-com.svg" alt="" style="height: 70%;">
-                <p> section</p>
+                <img src="./storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
+                <p>Rockets</p>
             </a>
             <a href="#">
-                <img src="" alt="">
-                <p> section</p>
+                <img src="./storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
+                <p>Capsules</p>
             </a>
             <a href="#">
                 <img src="" alt="">

@@ -21,15 +21,10 @@ carousel.innerHTML = await innerImages(img);
 const reloadEventPages = async()=>{
     let dataRockets = await allRockets();
     let rockets = dataRockets.docs
-    console.log(rockets)
-
     let pagination = document.querySelector(".pagination");
     pagination.innerHTML = await InnerPagination(alldata);
-
-    console.log(pagination)
-
-        
-        pagination.addEventListener('click',async(e)=>{
+    
+    pagination.addEventListener('click',async(e)=>{
             // console.log(e.target.tagName)
             if(e.target.tagName === 'BUTTON'){
                 
@@ -49,9 +44,49 @@ const reloadEventPages = async()=>{
                 carousel.innerHTML += imgLinks;
                 
                 await reloadEventPages();
+                reloadFooterEvent();
             }
         })
 }
 
 await reloadEventPages();
+
+let footer__section = document.querySelector(".footer__section")
+console.log(footer__section)
+
+const reloadFooterEvent = ()=>{
+    console.log('All reloaded')
+    let footer__section = document.querySelector(".footer__section")
+    console.log(footer__section)
+
+    footer__section.addEventListener('click', async (e)=>{
+        if(e.target.tagName === 'IMG' || e.target.tagName === 'P'){
+            let a = e.target.closest('a');
+            if(a){
+                let nameRedirect = a.querySelector('p');
+                if(nameRedirect.textContent === 'Capsules'){
+                    let data =  await rocketsPage(1);
+                    let init = data.docs
+                    let content = await rocketPageContent(init)
+                    body.innerHTML = content;
+                    reloadEventPages();
+                    reloadFooterEvent();
+                }
+                else if(nameRedirect.textContent === 'Rockets'){
+
+                    let data =  await rocketsPage(1);
+                    let init = data.docs
+                    let content = await rocketPageContent(init)
+                    body.innerHTML = content;
+                    let carousel = document.querySelector(".carousel");
+                    carousel.innerHTML = await innerImages(img);
+                    reloadEventPages();
+                    reloadFooterEvent();
+                };
+            };
+        };
+    })
+
+}
+reloadFooterEvent();
 

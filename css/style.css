@@ -76,6 +76,11 @@ body{
     margin-left: 30px;
 }
 
+.description__content small a{
+    text-decoration: none;
+    color: var(--withe--);
+}
+
 .center__content{
     /* background: moccasin; */
     width: 60%;
@@ -88,30 +93,39 @@ body{
 .progressbar__round{
     /* background: lightcoral; */
     width: 100%;
-    height: 40%;
+    height: 30%;
     display: flex;
     justify-content: space-around;
 }
 
 .progress-bar {
-    margin-top: 40px;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
     text-align: center;
     width: 150px;
-    height: 150px;
+    height: 100%;
     border-radius: 50%;
+    font-family: 'roboto-light';
     background: 
       radial-gradient(closest-side, rgb(20, 20, 20) 79%, transparent 80% 100%),
       conic-gradient(from 180deg, rgb(94, 204, 252) 23%, rgba(255, 192, 203, 0) 0);  
   }
 
   .progress-bar > div {
-    color: white;
+    color: var(--withe--);
     width: 70%;
   }
+
+  .progress-bar > div >strong{
+    font-size: small;
+  }
+
+  .progress-bar > div p{
+    font-size: smaller;
+  }
+
 .cat{
     /* background: green; */
     width: 40%;
@@ -167,7 +181,7 @@ body{
 .content__information{
     /* background: green; */
     width: 100%;
-    height: 53%;
+    height: 50%;
     overflow-y: scroll;
     scrollbar-width: none;
     border-width: 2px;
@@ -180,22 +194,28 @@ body{
 
 .features__information{
     /* background: blueviolet; */
+    display: flex;
     width: 100%;
     height: 40px;
+    padding-inline:5px ;
+    justify-content: space-between;
     color: var(--withe--);
 }
 
 .features__information small{
+    /* background-color: #2f3453; */
     font-family: 'roboto-light';
 }
 
 .features__information span{
-    font-family: 'roboto-light';
+    font-family: 'roboto-Bold';
+    font-size: smaller;
 }
 
 .carousel{ 
     /* background: #2f3453; */
     display: flex;
+    align-items: center;
     width: 40%;
     height: 80%;
     padding-left:10px;
@@ -293,6 +313,7 @@ body{
     height: 100%;
     /* align-items: center; */
     text-decoration: none;
+    padding-block:5px ;
     color: var(--withe--);
     font-family:'roboto-light';
 }
@@ -303,15 +324,18 @@ body{
 }
 
 .pagination{
-    background-color: #4b7aaf;
+    background-color: #4b527e;
     padding: 20px;
     border-radius: 25px;
+    position: absolute;
+    bottom: .4%;
+    right: 5%;
 }
 
 .pagination button{
-    background-color: #13132A;
+    background-color: var(--color-one--);
     border-style: none;
-    padding: 2px;
+    padding: 5px;
     border-radius: 25px;
     color: var(--withe--);
 }
