@@ -44,7 +44,7 @@ body{
     display: flex;
 }
 
-.sidebar__left{
+.capusles__left{
     /* background-color: darkblue; */
     display: flex;
     width: 20%;
@@ -150,15 +150,15 @@ body{
 .main__content{
     /* background: lightseagreen; */
     display: flex;
-    flex-direction: row;
+    flex-direction: column;
     justify-content: center;
-    align-items: flex-end;
+    align-items: center;
     width: 100%;
     height: 70%;
 }
 
 .card{
-    /* background: violet; */
+    background: violet;
     width: 30%;
     height: 100%;
     padding-block: 5px;
@@ -249,7 +249,8 @@ body{
     /* background: rebeccapurple; */
     display:flex;
     flex-direction: column;
-    width: 20%;
+    justify-content: center;
+    width: 30%;
     height: 100%;
     padding-inline: 10px;
     overflow-y: scroll;
@@ -430,7 +431,7 @@ body{
 .capusles__left{
     /* background-color: darkblue; */
     display: flex;
-    width: 20%;
+    width: 30%;
     height: 100%;
     padding-inline: 10px;
     flex-direction: column;
@@ -439,4 +440,93 @@ body{
     scrollbar-width: none;
     justify-content: center;
     color: var(--withe--);
+}
+
+.right__tags{
+    /* background: blue; */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 100%;
+    height: 50px;
+    color: var(--withe--);
+}
+
+.hader__info{
+    background: var(--color-one--);
+    width: 100%;
+    text-align: center;
+    border-top-left-radius: 25px;
+    border-top-right-radius: 25px;
+    border-style: solid;
+    border-inline: none;
+    border-top:none ;
+    border-width: 1px;
+}
+
+.content__rigth{
+    background: var(--color-two--);
+    width: 100%;
+    height: 100%;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    text-align: center;
+    padding-block: 5px;
+}
+
+
+.launches{
+    background-color: var(--color-two--);
+    width:60%;
+    text-align: center;
+    color: var(--withe--);
+    height:60px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.launches :nth-child(1) {
+    background: #20213D;
+    height: 50%;
+    border-style:solid ;
+    border-inline: none;
+    border-top: none;
+    border-width: 2px;
+    align-content: center;
+    border-color: #2f3453
+}
+
+.launches :nth-child(2){
+    background: var(--color-two--);
+    height: 50%;
+    align-content: center;
+}
+
+
+.last__update{
+    background-color: var(--color-two--);
+    width:60%;
+    text-align: center;
+    color: var(--withe--);
+    height:60px;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-top: 10px;
+}
+
+.last__update :nth-child(1){
+    background: #20213D;
+    height: 50%;
+    border-style:solid ;
+    border-inline: none;
+    border-top: none;
+    border-width: 2px;
+    align-content: center;
+    border-color: #2f3453
+}
+
+.last__update :nth-child(2){
+    background: var(--color-two--);
+    align-content: center;
+    height: 50%;
 }

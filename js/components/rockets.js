@@ -1,7 +1,6 @@
 
 import { rocketsPage, allRockets } from "../module/app.js"
-// let data = await rocketsPage(1)
-// let docs = data.docs;
+
 export const rocketPageContent = async (docs)=>{
     // console.log(docs)
     let plantilla = '';
@@ -266,7 +265,7 @@ export const rocketPageContent = async (docs)=>{
                 <img src="./storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
                 <p>Rockets</p>
             </a>
-            <a href="#">
+            <a href="views/section.html">
                 <img src="./storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
                 <p>Capsules</p>
             </a>

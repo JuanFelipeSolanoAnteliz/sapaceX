@@ -81,10 +81,13 @@ export const oneCapsule = async(page)=>{
 
     let config ={
         method:'POST',
-        headers:{'Content-type':'application/json'},
+        headers:{"content-type":"application/json"},
         body:JSON.stringify({
             query:{},
-            options:{}
+            options:{
+                limit:1,
+                page:page
+            }
         })
     };
 

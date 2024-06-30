@@ -44,7 +44,6 @@ const changePage = async (elemento, body, dataPage, bodyPlantilla,paginationButt
                 let pageImage = await innerImages(img);
                 document.querySelector(".carousel").innerHTML = pageImage;
             }
-            reloadFooterEvent();
             funcion();
             
         }
@@ -61,48 +60,48 @@ funcion();
 // ----------------------------------------------------------------- fin Pagination------------------------------------------------------------------------
 
 // ------------------------------------------------------------------- footer ------------------------------------------------------------------------
-const reloadFooterEvent = ()=>{
+// const reloadFooterEvent = ()=>{
   
 
-    console.log('All reloaded')
-    let footer__section = document.querySelector(".footer__section")
-    console.log(footer__section)
+//     console.log('All reloaded')
+//     let footer__section = document.querySelector(".footer__section")
+//     console.log(footer__section)
 
-    footer__section.addEventListener('click', async (e)=>{
-        if(e.target.tagName === 'IMG' || e.target.tagName === 'P'){
-            let a = e.target.closest('a');
-            if(a){
-                let nameRedirect = a.querySelector('p');
-                if(nameRedirect.textContent === 'Capsules'){
-                    let data =  await rocketsPage(1);
-                    let init = data.docs
-                    let content = await rocketPageContent(init)
-                    body.innerHTML = content;
-                    let innerPages = await paginationButtons(data)
-                    document.querySelector("#number__page").innerHTML = innerPages; 
-                    reloadFooterEvent();
-                    funcion();
-                    console.log('asd')
-                }
-                else if(nameRedirect.textContent === 'Rockets'){
+//     footer__section.addEventListener('click', async (e)=>{
+//         if(e.target.tagName === 'IMG' || e.target.tagName === 'P'){
+//             let a = e.target.closest('a');
+//             if(a){
+//                 let nameRedirect = a.querySelector('p');
+//                 if(nameRedirect.textContent === 'Capsules'){
+//                     let data =  await rocketsPage(1);
+//                     let init = data.docs
+//                     let content = await rocketPageContent(init)
+//                     body.innerHTML = content;
+//                     let innerPages = await paginationButtons(data)
+//                     document.querySelector("#number__page").innerHTML = innerPages; 
+//                     reloadFooterEvent();
+//                     funcion();
+//                     console.log('asd')
+//                 }
+//                 else if(nameRedirect.textContent === 'Rockets'){
 
-                    let data =  await rocketsPage(1);
-                    let init = data.docs
-                    let content = await rocketPageContent(init)
-                    body.innerHTML = content;
-                    let carousel = document.querySelector(".carousel");
-                    carousel.innerHTML = await innerImages(img);
-                    let innerPages = await paginationButtons(data)
-                    document.querySelector("#number__page").innerHTML = innerPages; 
-                    reloadFooterEvent();
-                    funcion();
-                    console.log('asd')
+//                     let data =  await rocketsPage(1);
+//                     let init = data.docs
+//                     let content = await rocketPageContent(init)
+//                     body.innerHTML = content;
+//                     let carousel = document.querySelector(".carousel");
+//                     carousel.innerHTML = await innerImages(img);
+//                     let innerPages = await paginationButtons(data)
+//                     document.querySelector("#number__page").innerHTML = innerPages; 
+//                     reloadFooterEvent();
+//                     funcion();
+//                     console.log('asd')
  
-                };
-            };
-        };
-    })
+//                 };
+//             };
+//         };
+//     })
 
-}
-reloadFooterEvent();
+// }
+// reloadFooterEvent();
 
