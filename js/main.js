@@ -18,16 +18,19 @@ console.log(alldata)
 let body = document.querySelector("#body");
 body.innerHTML = await rocketPageContent(docs);
 
+let number__page = document.querySelector("#number__page");
+number__page.innerHTML =  await paginationButtons(data);
+
 let pagination = document.querySelector("#pagination")
 
-let number__page = document.querySelector("#number__page");
-number__page.innerHTML =  await paginationButtons(data)
+
+console.log(number__page)
 
 let carousel = document.querySelector(".carousel");
 carousel.innerHTML = await innerImages(img);
 
 
-const changePage = async (elemento, body, dataPage, bodyPlantilla,paginationButtons,number__page,imagenes) => {
+export const changePage = async (elemento, body, dataPage, bodyPlantilla,paginationButtons,number__page,imagenes) => {
     elemento = document.querySelector("#pagination")
     elemento.addEventListener('click', async (e) => {
         if (e.target.tagName === 'BUTTON') {

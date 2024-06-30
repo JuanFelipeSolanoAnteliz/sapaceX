@@ -25,20 +25,20 @@ export const capsuleContent = async (docsJson) =>{
     
                     <div class="id__capsula">
                         <div id="hader__info">
-                            status
+                            Status
                         </div>
                         <div id="content">
-                            5e9e2c5bf35918ed873b2664
+                            ${element.status}
                         </div>
                     </div>
     
     
                     <div class="id__capsula">
                         <div id="hader__info">
-                            type
+                            Type
                         </div>
                         <div id="content">
-                            5e9e2c5bf35918ed873b2664
+                            ${element.type}
                         </div>
                     </div>
                 </article>
@@ -62,12 +62,12 @@ export const capsuleContent = async (docsJson) =>{
                     <section class="main__content">
                        
                         <div class="launches">
-                            <p>launches</p>
-                            <p>5e9e2c5bf35918ed873b2664</p>
+                            <p>Launches</p>
+                            <p>${element.launches[0]}</p>
                         </div>
                         <div class="last__update">
-                            <p>last update</p>
-                            <p>Reentered after three weeks in orbit</p>
+                            <p>Last update</p>
+                            <p>${element.last_update}</p>
                         </div>
         
                     </section>
@@ -78,16 +78,16 @@ export const capsuleContent = async (docsJson) =>{
                 <article class="sidebar__rigth">
                    
                     <div class="right__tags">
-                        <p class="hader__info">reuse count</p>
-                        <p class="content__rigth">1</p>
+                        <p class="hader__info">Reuse count</p>
+                        <p class="content__rigth">${element.reuse_count}</p>
                     </div>
                     <div class="right__tags">
                         <p class="hader__info">water landings</p>
-                        <p class="content__rigth">0</p>
+                        <p class="content__rigth">${element.water_landings}</p>
                     </div>
                     <div class="right__tags">
                         <p class="hader__info">land landings</p>
-                        <p class="content__rigth">1</p>
+                        <p class="content__rigth">${element.land_landings}</p>
                     </div>
     
                 </article>
