@@ -298,22 +298,6 @@ export const rocketPageContent = async (docs)=>{
 }
 
 
-
-export const InnerPagination = async(data) =>{
-    let plantilla = '';
-    for(let i = 1; i <= data.docs.length; i++){
-        plantilla +=/*html*/`
-        <button id="${i}" class="buttons">${i}</button>
-        `;
-    }
-    return plantilla;
-}
-
-let dataRockets = await allRockets();
-let allItems = dataRockets.docs
-let totalPages = allItems.length
-
-
 export const innerImages = async(data)=>{
     let plantilla = ''
     let images = data.docs[0].flickr_images
@@ -324,6 +308,6 @@ export const innerImages = async(data)=>{
         </div>
         `;
     });
-    console.log(plantilla)
+    // console.log(plantilla)
     return plantilla;
 }
