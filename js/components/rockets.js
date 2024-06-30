@@ -8,6 +8,7 @@ export const rocketPageContent = async (docs)=>{
     docs.forEach(element => {
         // console.log(element)
         plantilla += /*html*/`
+        <img class="bg" src="./storage/img/bg_planets.svg" alt="">
         <header id="header" class="header">
             <h1>${element.name.toUpperCase()}</h1>
         </header>
@@ -284,7 +285,11 @@ export const rocketPageContent = async (docs)=>{
 
         </section>
         <article class=pagination__content>
-          <div id="pagination" class="pagination"></div> 
+          <div id="pagination" class="pagination">
+            <article id="Prev">Prev</article>
+                <section id="number__page" ></section>
+            <article id="Next">Next</article>
+          </div> 
         </article>
     </footer>
         `; 
