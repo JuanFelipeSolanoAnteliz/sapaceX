@@ -33,7 +33,7 @@ export const coresContent = async (docsJson)=>{
 
                 <div class="id__capsula">
                     <div id="hader__info">
-                        block
+                        Block
                     </div>
                     <div id="content">
                         ${element.block}
@@ -110,11 +110,11 @@ export const coresContent = async (docsJson)=>{
                 <img src="../storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
                 <p>Capsules</p>
             </a>
-            <a href="">
+            <a href="#">
                 <img src="../storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
                 <p> Cores</p>
             </a>
-            <a href="#">
+            <a href="views/crew.html">
                 <img src="" style="height: 60%;" alt="">
                 <p> section</p>
             </a>
