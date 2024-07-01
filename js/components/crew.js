@@ -1,14 +1,11 @@
 
-
-export const capsuleContent = async (docsJson) =>{
+export const crewContent = async (docsJson) =>{
     let plantilla = '';
-
     docsJson.forEach(element => {
-        plantilla +=/*html*/`
-        <body id="body">
+        plantilla += /*html*/`
         <img class="bg" src="../storage/img/bg_planets.svg" alt="">
         <header id="header" class="header">
-            <h1>${element.serial}</h1>
+            <h1>  ${(element.name).toUpperCase()}</h1>
         </header>
         <main class="main">
             <section class="main__section__content">
@@ -16,19 +13,21 @@ export const capsuleContent = async (docsJson) =>{
                 <article class="capusles__left">
                     <div class="id__capsula">
                         <div id="hader__info">
-                            ID
+                        Agency
                         </div>
                         <div id="content">
-                            ${element.id}
+                              ${element.agency}
                         </div>
                     </div>
     
                     <div class="id__capsula">
                         <div id="hader__info">
-                            Status
+                            About 
                         </div>
                         <div id="content">
-                            ${element.status}
+                            <a href=" ${element.wikipedia}">
+                                Wikipedia 
+                            </a> 
                         </div>
                     </div>
     
@@ -38,7 +37,7 @@ export const capsuleContent = async (docsJson) =>{
                             Type
                         </div>
                         <div id="content">
-                            ${element.type}
+                              element type 
                         </div>
                     </div>
                 </article>
@@ -51,7 +50,7 @@ export const capsuleContent = async (docsJson) =>{
                         </div>
                         
                             <article class="cat">
-                                <img src="../storage/img/Space X Dragon.svg">
+                                <img src="${element.image}" referrerpolicy="no-referrer">
                             </article>
                         
                         </div>
@@ -60,16 +59,7 @@ export const capsuleContent = async (docsJson) =>{
                         </div>
                     </section>
                     <section class="main__content">
-                       
-                        <div class="launches">
-                            <p>Launches</p>
-                            <p>${element.launches[0]}</p>
-                        </div>
-                        <div class="last__update">
-                            <p>Last update</p>
-                            <p>${element.last_update}</p>
-                        </div>
-        
+
                     </section>
                 </article>
                 <!-- -------------------------------- center ------------------------------------ -->
@@ -78,16 +68,16 @@ export const capsuleContent = async (docsJson) =>{
                 <article class="sidebar__rigth">
                    
                     <div class="right__tags">
-                        <p class="hader__info">Reuse count</p>
-                        <p class="content__rigth">${element.reuse_count}</p>
+                        <p class="hader__info">Launches</p>
+                        <p class="content__rigth">${element.launches}</p>
                     </div>
                     <div class="right__tags">
-                        <p class="hader__info">water landings</p>
-                        <p class="content__rigth">${element.water_landings}</p>
+                        <p class="hader__info">Status</p>
+                        <p class="content__rigth">${element.status}</p>
                     </div>
                     <div class="right__tags">
-                        <p class="hader__info">land landings</p>
-                        <p class="content__rigth">${element.land_landings}</p>
+                        <p class="hader__info">ID</p>
+                        <p class="content__rigth">${element.id}</p>
                     </div>
     
                 </article>
@@ -100,19 +90,19 @@ export const capsuleContent = async (docsJson) =>{
             <section class="footer__section">
                 <a href="../index.html">
                     <img src="../storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
-                    <p>Rockets</p>
+                    <p>ockets</p>
                 </a>
-                <a href="section.html">
+                <a href="views/section.html">
                     <img src="../storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
-                    <p>Capsules</p>
+                    <p>capsules</p>
                 </a>
-                <a href="cores.html">
+                <a href="views/cores.html">
                     <img src="../storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
-                    <p> Cores</p>
+                    <p> cores</p>
                 </a>
-                <a href="#">
-                    <img src="" style="height: 60%;" alt="">
-                    <p> section</p>
+                <a href="views/crew.html">
+                    <img src="../storage/img/crewFooter.svg" style="height: 60%;" alt="">
+                    <p> crew</p>
                 </a>
                 <a href="#">
                     <img src="" style="height: 60%;" alt="">
@@ -128,8 +118,7 @@ export const capsuleContent = async (docsJson) =>{
               </div> 
             </article>
         </footer>
-    </body>
-        `; 
+        `  
     });
     return plantilla;
 }

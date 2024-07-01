@@ -1,21 +1,22 @@
-
-import { crewContent } from "./components/crew.js";
-import { oneCrew } from "./module/app.js";
+import { oneLaunches } from "./module/app.js";
+import { launchContent } from "./components/launches.js";
 import { paginationButtons } from "./components/pagination.js";
 
-let firstCrew = await oneCrew(1);
-let crewDocs = firstCrew.docs;
-
-console.log(firstCrew)
+let firstLaunch = await oneLaunches(1);
+let launchDocs = firstLaunch.docs;
 
 let body = document.querySelector("#body");
-body.innerHTML = await crewContent(crewDocs);
+body.innerHTML = await launchContent(launchDocs);
 
 let number__page = document.querySelector("#number__page");
-number__page.innerHTML = await paginationButtons(firstCrew);
+number__page.innerHTML = await paginationButtons(firstLaunch);
 
+let carousel = document.querySelector(".carousel");
+
+
+let maxPag = firstLaunch.totalDocs;
 let currentPage = 1;
-let maxPag = firstCrew.totalDocs;
+
 
 const changePage = async (body, dataPage, bodyPlantilla,paginationButtons,maxPag,imagenes) => {
     let elemento = document.querySelector("#pagination")
@@ -59,6 +60,8 @@ const changePage = async (body, dataPage, bodyPlantilla,paginationButtons,maxPag
             currentPage += 1
             console.log(currentPage)
             let data = await dataPage(currentPage);
+            console.log(data)
+
                 let contentSwitch = data.docs
                 let plantilla = await bodyPlantilla(contentSwitch);
                 let innerPages = await paginationButtons(data);
@@ -113,6 +116,8 @@ const changePage = async (body, dataPage, bodyPlantilla,paginationButtons,maxPag
 
 const funcion = () =>{
     // let elemento = document.querySelector("#pagination")
-    changePage(body,oneCrew,crewContent,paginationButtons,maxPag);   
+    changePage(body,oneLaunches,launchContent,paginationButtons,maxPag);   
 }
 funcion();
+
+
