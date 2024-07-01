@@ -151,3 +151,21 @@ export const oneLaunches = async (page)=>{
     let data = await res.json();
     return data;
 }
+
+export const oneLandpad = async (page) => {
+    let config ={
+        method:'POST',
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify({
+            query:{},
+            options:{
+                limit:1,
+                page:page
+            }
+        })
+    };
+
+    let res = await fetch(`https://api.spacexdata.com/v4/landpads/query`,config);
+    let data = await res.json();
+    return data;
+}

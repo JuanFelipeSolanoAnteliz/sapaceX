@@ -306,8 +306,8 @@ export const launchContent = async (jsonDocs)=>{
                     <p> crew</p>
                 </a>
                 <a href="">
-                    <img src="" alt="">
-                    <p> section</p>
+                    <img src="../storage/img/launchFooter.svg" style="height: 60%;" alt="">
+                    <p> launches</p>
                 </a>
         
             </section>
