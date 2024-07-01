@@ -1,16 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
-    <link rel="stylesheet" href="../css/capsules.css">
-    <script type="module" src="../js/capsules.js"></script>
-</head>
-<body id="body">
-    <img class="bg" src="../storage/img/bg_planets.svg" alt="">
+
+
+export const coresContent = async (docsJson)=>{
+    let plantilla = ''
+    docsJson.forEach(element => {
+        plantilla +=/*html*/`
+            <img class="bg" src="../storage/img/bg_planets.svg" alt="">
     <header id="header" class="header">
-        <h1>C101</h1>
+        <h1>${element.serial}</h1>
     </header>
     <main class="main">
         <section class="main__section__content">
@@ -18,29 +14,29 @@
             <article class="capusles__left">
                 <div class="id__capsula">
                     <div id="hader__info">
-                        Id capsule
+                        ID
                     </div>
                     <div id="content">
-                        5e9e2c5bf35918ed873b2664
+                        ${element.id}
                     </div>
                 </div>
 
                 <div class="id__capsula">
                     <div id="hader__info">
-                        status
+                        Status
                     </div>
                     <div id="content">
-                        5e9e2c5bf35918ed873b2664
+                        ${element.status}
                     </div>
                 </div>
 
 
                 <div class="id__capsula">
                     <div id="hader__info">
-                        type
+                        block
                     </div>
                     <div id="content">
-                        5e9e2c5bf35918ed873b2664
+                        ${element.block}
                     </div>
                 </div>
             </article>
@@ -53,7 +49,7 @@
                     </div>
                     
                         <article class="cat">
-                            <img src="../storage/img/Space X Dragon.svg">
+                            <img src="../storage/img/cores.webp">
                         </article>
                     
                     </div>
@@ -64,13 +60,14 @@
                 <section class="main__content">
                    
                     <div class="launches">
-                        <p>launches</p>
-                        <p>5e9e2c5bf35918ed873b2664</p>
+                        <p>Launches</p>
+                        <p>${element.launches}</p>
                     </div>
-                    <div class="last__update">
-                        <p>last update</p>
-                        <p>Reentered after three weeks in orbit</p>
-                    </div>
+                    
+                    <div class="launches">
+                    <p>Last update</p>
+                    <p>${element.last_update}</p>
+                </div>
     
                 </section>
             </article>
@@ -80,17 +77,22 @@
             <article class="sidebar__rigth">
                
                 <div class="right__tags">
-                    <p class="hader__info">reuse count</p>
-                    <p class="content__rigth">1</p>
+                    <p class="hader__info">Reuse count</p>
+                    <p class="content__rigth">${element.reuse_count}</p>
                 </div>
                 <div class="right__tags">
-                    <p class="hader__info">water landings</p>
-                    <p class="content__rigth">0</p>
+                    <p class="hader__info">Rtls attempts</p>
+                    <p class="content__rigth">${element.rtls_attempts}</p>
                 </div>
                 <div class="right__tags">
                     <p class="hader__info">land landings</p>
-                    <p class="content__rigth">1</p>
+                    <p class="content__rigth">${element.asds_landings}</p>
                 </div>
+
+                <div class="right__tags">
+                <p class="hader__info">land attempts</p>
+                <p class="content__rigth">${element.asds_attempts}</p>
+            </div>
 
             </article>
             <!-- ----------------------------- sidebar rigth -------------------------------- -->
@@ -108,16 +110,16 @@
                 <img src="../storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
                 <p>Capsules</p>
             </a>
+            <a href="">
+                <img src="../storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
+                <p> Cores</p>
+            </a>
             <a href="#">
-                <img src="../storage/img/cpu-svgrepo-com.svg" alt="">
+                <img src="" style="height: 60%;" alt="">
                 <p> section</p>
             </a>
             <a href="#">
-                <img src="" alt="">
-                <p> section</p>
-            </a>
-            <a href="#">
-                <img src="" alt="">
+                <img src="" style="height: 60%;" alt="">
                 <p> section</p>
             </a>
 
@@ -130,5 +132,7 @@
           </div> 
         </article>
     </footer>
-</body>
-</html>
+        `;
+    });
+    return plantilla;
+}

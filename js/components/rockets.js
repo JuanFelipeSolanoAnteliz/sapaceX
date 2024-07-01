@@ -269,9 +269,9 @@ export const rocketPageContent = async (docs)=>{
                 <img src="./storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
                 <p>Capsules</p>
             </a>
-            <a href="#">
-                <img src="" alt="">
-                <p> section</p>
+            <a href="views/cores.html">
+                <img src="./storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
+                <p> Cores</p>
             </a>
             <a href="#">
                 <img src="" alt="">
