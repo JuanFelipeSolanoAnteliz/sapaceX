@@ -54,7 +54,7 @@ export const rocketPageContent = async (docs)=>{
                             <div class="img">
                                 <img src="./storage/img/mech.svg" alt="">
                             </div>
-                            <h3>Read more about the coete</h3>
+                            <h3>Read more about the rocket</h3>
                         </div>
                     <small><a href="${element.wikipedia}">wikipedia</a></small>
                 </div>
@@ -77,7 +77,7 @@ export const rocketPageContent = async (docs)=>{
                         </div>
                         
                         <article class="cat">
-                            <img src="./storage/img/jetpack cat.gif" alt="">
+                            <img src="./storage/img/index2.webp" alt="">
                         </article>
                         
                         <div class="progress-bar"
