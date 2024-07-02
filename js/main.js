@@ -30,34 +30,109 @@ let carousel = document.querySelector(".carousel");
 carousel.innerHTML = await innerImages(img);
 
 
-export const changePage = async (elemento, body, dataPage, bodyPlantilla,paginationButtons,number__page,imagenes) => {
-    elemento = document.querySelector("#pagination")
+let maxPag = data.totalDocs;
+let currentPage = 1;
+
+
+const changePage = async (body, dataPage, bodyPlantilla,paginationButtons,maxPag,imagenes) => {
+    let elemento = document.querySelector("#pagination")
     elemento.addEventListener('click', async (e) => {
         if (e.target.tagName === 'BUTTON') {
-            let pagina = e.target.id;
-            let data = await dataPage(pagina);
+            currentPage = parseInt(e.target.id);
+            let data = await dataPage(currentPage);
             let contentSwitch = data.docs
             let plantilla = await bodyPlantilla(contentSwitch);
-            body.innerHTML = plantilla;
             let innerPages = await paginationButtons(data);
+            body.innerHTML = plantilla;
+            // console.log (plantilla);
             document.querySelector("#number__page").innerHTML = innerPages;
             
+            
             if(imagenes){
-                let img = await rocketsImage(pagina)
+                let img = await rocketsImage(currentPage)
                 let pageImage = await innerImages(img);
                 document.querySelector(".carousel").innerHTML = pageImage;
             }
             funcion();
-            
+        }else if(e.target.tagName === 'ARTICLE' && e.target.id === 'Next'){
+            if(currentPage >= maxPag ){
+                console.log(currentPage)
+                let data = await dataPage(currentPage);
+                let contentSwitch = data.docs
+                let plantilla = await bodyPlantilla(contentSwitch);
+                let innerPages = await paginationButtons(data);
+                body.innerHTML = plantilla;
+                console.log (plantilla);
+                document.querySelector("#number__page").innerHTML = innerPages;
+                
+                if(imagenes){
+                    let img = await rocketsImage(currentPage)
+                    let pageImage = await innerImages(img);
+                    document.querySelector(".carousel").innerHTML = pageImage;
+                }
+                currentPage = 0
+                funcion();
+            }else if(currentPage < maxPag ){}
+            currentPage += 1
+            console.log(currentPage)
+            let data = await dataPage(currentPage);
+            console.log(data)
+
+                let contentSwitch = data.docs
+                let plantilla = await bodyPlantilla(contentSwitch);
+                let innerPages = await paginationButtons(data);
+                body.innerHTML = plantilla;
+                // console.log (plantilla);
+                document.querySelector("#number__page").innerHTML = innerPages;
+                
+                if(imagenes){
+                    let img = await rocketsImage(currentPage)
+                    let pageImage = await innerImages(img);
+                    document.querySelector(".carousel").innerHTML = pageImage;
+                }
+                funcion();
+        }else if(e.target.tagName === 'ARTICLE' && e.target.id === 'Prev'){
+            if(currentPage <= 1){
+                console.log('hola')
+                let data = await dataPage(currentPage);
+                let contentSwitch = data.docs
+                let plantilla = await bodyPlantilla(contentSwitch);
+                let innerPages = await paginationButtons(data);
+                body.innerHTML = plantilla;
+                console.log (plantilla);
+                document.querySelector("#number__page").innerHTML = innerPages;
+                
+                if(imagenes){
+                    let img = await rocketsImage(currentPage)
+                    let pageImage = await innerImages(img);
+                    document.querySelector(".carousel").innerHTML = pageImage;
+                }
+                currentPage = maxPag+1;
+                funcion();
+            }else if(currentPage <= maxPag ){}
+            currentPage -= 1
+            console.log(currentPage)
+            let data = await dataPage(currentPage);
+                let contentSwitch = data.docs
+                let plantilla = await bodyPlantilla(contentSwitch);
+                let innerPages = await paginationButtons(data);
+                body.innerHTML = plantilla;
+                // console.log (plantilla);
+                document.querySelector("#number__page").innerHTML = innerPages;
+                
+                if(imagenes){
+                    let img = await rocketsImage(currentPage)
+                    let pageImage = await innerImages(img);
+                    document.querySelector(".carousel").innerHTML = pageImage;
+                }
+                funcion();
         }
     });
 };
 
-
 const funcion = () =>{
     // let elemento = document.querySelector("#pagination")
-    changePage(pagination,body,rocketsPage,rocketPageContent,paginationButtons,number__page,carousel);
-    
+    changePage(body,rocketsPage,rocketPageContent,paginationButtons,maxPag,carousel);   
 }
 funcion();
 // ----------------------------------------------------------------- fin Pagination------------------------------------------------------------------------
