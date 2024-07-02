@@ -256,3 +256,23 @@ export const oneLaunchpad = async (page) =>{
     let data = await res.json();
     return data;
 }
+
+
+export const onePayload = async (page) =>{
+    let config ={
+        method:'POST',
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify({
+            query:{},
+            options:{
+                limit:1,
+                page:page
+            }
+        })
+    };
+
+    let res = await fetch(`https://api.spacexdata.com/v4/payloads/query`,config);
+    let data = await res.json();
+    return data;
+}
+

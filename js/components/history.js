@@ -117,17 +117,22 @@ export const historyContent = async(docs)=>{
             <img src="../storage/img/dragonsFoot.svg" style="height: 60%;" alt="">
             <p>dragons</p>
         </a>
-
+    
         <a href="history.html">
             <img src="../storage/img/histo.svg" style="height: 60%;" alt="">
             <p>history</p>
         </a>
-
+    
         
         <a href="launchpads.html">
             <img src="../storage/img/asd.svg" style="height: 60%;" alt="">
             <p>launchpads</p>
         </a>
+        <a href="payloads.html">
+            <img src="../storage/img/payf.svg" style="height: 60%;" alt="">
+            <p>payloads</p>
+        </a>
+
         </section>
             <article class=pagination__content>
               <div id="pagination" class="pagination">

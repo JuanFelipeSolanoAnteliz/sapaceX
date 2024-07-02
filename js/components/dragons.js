@@ -203,11 +203,7 @@ export const dragonsContent = async (docs)=>{
                                     <small>Unpressurized cargo:</small>
                                     <span>${element.trunk.cargo.unpressurized_cargo}</span>
                                 </div>
-                                <div class="features__information">
-                                    <small>Recovery:</small>
-                                    <span>element.links.reddit.recovery</span>
-                                </div>
-                            </div>
+                               
                         </div>
     
                         <h3>About</h3>
@@ -349,6 +345,11 @@ export const dragonsContent = async (docs)=>{
         <img src="../storage/img/asd.svg" style="height: 60%;" alt="">
         <p>launchpads</p>
     </a>
+    <a href="payloads.html">
+        <img src="../storage/img/payf.svg" style="height: 60%;" alt="">
+        <p>payloads</p>
+    </a>
+
     </section>
     <article class=pagination__content>
       <div id="pagination" class="pagination">

@@ -1,11 +1,11 @@
 
-export const companyContent = async(list)=>{
-    let plantilla = '';
-    list.forEach(element => {
-        plantilla += /*html*/`
+export const payContent = async (docs)=>{
+    let plantilla = ``;
+    docs.forEach(element => {
+        plantilla +=/*html*/`
         <img class="bg" src="../storage/img/bg_planets.svg" alt="">
         <header id="header" class="header">
-
+            <h1> ${(element.name).toUpperCase()} </h1>
         </header>
         <main class="main">
             <section class="main__section__content">
@@ -15,16 +15,18 @@ export const companyContent = async(list)=>{
                         <div id="hader__info">
                             Launches
                     </div>
-                        <div class="intercalado">
-                            <p><span> Founded: </span> <span>${element.founded}</span></p>
-                            <p><span>Founder: </span> <span>${element.founder}</span></p>
-                            <p><span > Employees: </span> <span>${element.employees}</span></p>
-                            <p><span>name: </span> <span>${element.name}</span></p>
-                            <p><span>Website: </span> <a href="${element.links.website}">➡️ More Info<span></span></a></p>
-                            <p><span>Flickr: </span> <a href="${element.links.flickr}">  ➡️ More Info<span></span></a></p>
-                            <p><span>Twitter: </span> <a href="${element.links.twitter}"><span>📱 Visit</span></a></p>
-                            <p><span>Elon twitter: <a href="${element.links.elon_twitter}"></span>📱 Visit<span></span></a></p>
-                        </div>
+                    <div class="intercalado">
+                    <p><span>Mean anomaly: </span> <span>${element.mean_anomaly === null ? 'none': element.mean_anomaly}</span></p>
+                    <p><span>Arg of pericenter: </span> <span>${element.arg_of_pericenter  === null ? 'none': element.arg_of_pericenter }</span></p>
+                    <p><span>raan: </span> <span>${element.raan  === null ? 'none':element.raan }</span></p>
+                    <p><span>mean motion: </span> <span>${element.mean_motion=== null ? 'none': element.mean_motion }</span></p>
+                    <p><span>epoch: </span> <span>${element.epoch === null ? 'none': element.epoch }</span></p>
+                    <p><span>lifespan years: </span> <span>${element.lifespan_years  === null ? 'none': element.lifespan_years }</span></p>
+                    <p><span>period min: </span> <span>${element.period_min === null ? 'none': element.period_min }</span></p>
+                    <p><span>inclination deg:</span> <span> ${element.inclination_deg  === null ? 'none': element.inclination_deg } </span></p>
+                    <p><span>apoapsis km: </span> <span> ${element.apoapsis_km}</span></p>
+                    <p><span> periapsis km: </span> <span> ${element.periapsis_km}</span></p>
+
                     </div>
     
                 </article>
@@ -37,7 +39,7 @@ export const companyContent = async(list)=>{
                         </div>
                         
                             <article class="cat">
-                            <img src="../storage/img/gray.png"  referrerpolicy="no-referrer">
+                            <img src="../storage/img/pay.png" >
                             </article>
                         
                         </div>
@@ -48,8 +50,13 @@ export const companyContent = async(list)=>{
                     <section class="main__content">
                     
                         <div class="launches">
-                            <p>Sumary</p>
-                            <p>${element.summary} </p>
+                            <p>ID</p>
+                            <p>  ${element.id} </p>
+                        </div>
+    
+                        <div class="launches">
+                            <p>Launch</p>
+                            <p>${element.launch} </p>
                         </div>
         
                     </section>
@@ -62,14 +69,16 @@ export const companyContent = async(list)=>{
                         <div id="hader__info" style="color: #fff">Info</div>
                     </div>
                     <div class= "intercalado" >
-                        <p><span > valuation: </span> <span>${element.valuation}</span></p>
-                        <p><span>Cto propulsion: </span> <span>${element.cto_propulsion}</span></p>
-                        <p><span>COO: </span> <span>${element.coo}</span></p>
-                        <p><span>CTO: </span> <span>${element.cto}</span></p>
-                        <p><span>CEO: </span> <span>${element.ceo}</span></p>
-                        <p><span>Test sites: </span> <span>${element.test_sites}</span></p>
-                        <p><span>Launch sites: </span> <span>${element.launch_sites}</span></p>
-                        <p><span>vehicles: </span> <span>${element.vehicles}</span></p>
+                        <p><span > axis_km: </span> <span>${element.semi_major_axis_km === null ? 'none': element.semi_major_axis_km}</span></p>
+                        <p><span>longitude: </span> <span>${element.longitude === null ? 'none': element.longitude}</span></p>
+                        <p><span>reference_system</span> <span>${element.reference_system}</span></p>
+                        <p><span>regime: </span> <span>${element.regime}</span></p>
+                        <p><span>region:</span> <span>${element.region}</span></p>
+                        <p><span>orbit:</span> <span>${element.orbit}</span></p>
+                        <p><span>mass kg:</span> <span>${element.mass_kg}</span></p>
+                        <p><span>type: </span> <span>${element.type}</span></p>
+                        <p><span>customers: </span> <span>${element.customers[0]}</span></p>
+                        <p><span>manufacturers: </span> <span>${element.manufacturers[0]}</span></p>
                     </div>
                     
                 </article>
@@ -134,8 +143,15 @@ export const companyContent = async(list)=>{
         </a>
 
         </section>
+        <article class=pagination__content>
+          <div id="pagination" class="pagination">
+            <article id="Prev">Prev</article>
+                <section id="number__page" ></section>
+            <article id="Next">Next</article>
+          </div> 
+        </article>
     </footer>
-        `;   
+        `;
     });
     return plantilla;
-}
+};

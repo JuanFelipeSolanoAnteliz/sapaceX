@@ -1,12 +1,16 @@
-
-
-export const coresContent = async (docsJson)=>{
-    let plantilla = ''
-    docsJson.forEach(element => {
-        plantilla +=/*html*/`
-            <img class="bg" src="../storage/img/bg_planets.svg" alt="">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>payloads</title>
+    <link rel="stylesheet" href="../css/payloads.css">
+    <script type="module" src="../js/payloads.js" defer></script>
+</head>
+<body id="body">
+    <img class="bg" src="../storage/img/bg_planets.svg" alt="">
     <header id="header" class="header">
-        <h1>${element.serial}</h1>
+        <h1> ${element.name} </h1>
     </header>
     <main class="main">
         <section class="main__section__content">
@@ -14,31 +18,12 @@ export const coresContent = async (docsJson)=>{
             <article class="capusles__left">
                 <div class="id__capsula">
                     <div id="hader__info">
-                        ID
-                    </div>
-                    <div id="content">
-                        ${element.id}
-                    </div>
+                        Launches
+                </div>
+                <div class="intercalado">
+                    ${Array.isArray(element.launches) && element.launches.length > 0 ? element.launches.map( launch =>`<p>${launch}</p>`).join('') : `<p></p>`}
                 </div>
 
-                <div class="id__capsula">
-                    <div id="hader__info">
-                        Status
-                    </div>
-                    <div id="content">
-                        ${element.status}
-                    </div>
-                </div>
-
-
-                <div class="id__capsula">
-                    <div id="hader__info">
-                        Block
-                    </div>
-                    <div id="content">
-                        ${element.block}
-                    </div>
-                </div>
             </article>
             <!-- -----------------------------side bar left---------------------------------- -->
 
@@ -49,7 +34,6 @@ export const coresContent = async (docsJson)=>{
                     </div>
                     
                         <article class="cat">
-                            <img src="../storage/img/cores.webp">
                         </article>
                     
                     </div>
@@ -58,16 +42,16 @@ export const coresContent = async (docsJson)=>{
                     </div>
                 </section>
                 <section class="main__content">
-                   
+                
                     <div class="launches">
-                        <p>Launches</p>
-                        <p>${element.launches}</p>
+                        <p>ID</p>
+                        <p>  ${element.id} </p>
                     </div>
-                    
+
                     <div class="launches">
-                    <p>Last update</p>
-                    <p>${element.last_update}</p>
-                </div>
+                        <p>Details</p>
+                        <p>${element.details} </p>
+                    </div>
     
                 </section>
             </article>
@@ -75,25 +59,22 @@ export const coresContent = async (docsJson)=>{
 
             <!-- ----------------------------- sidebar rigth -------------------------------- -->
             <article class="sidebar__rigth">
-               
-                <div class="right__tags">
-                    <p class="hader__info">Reuse count</p>
-                    <p class="content__rigth">${element.reuse_count}</p>
+                <div class="id__capsula">
+                    <div id="hader__info" style="color: #fff">Info</div>
                 </div>
-                <div class="right__tags">
-                    <p class="hader__info">Rtls attempts</p>
-                    <p class="content__rigth">${element.rtls_attempts}</p>
+                <div class= "intercalado" >
+                    <p><span > Full name: </span> <span>${element.full_name}</span></p>
+                    <p><span>Status</span> <span>${element.status}</span></p>
+                    <p><span>Type</span> <span>${element.type}</span></p>
+                    <p><span>locality</span> <span>${element.locality}</span></p>
+                    <p><span>region</span> <span>${element.region}</span></p>
+                    <p><span>latitude</span> <span>${element.latitude}</span></p>
+                    <p><span>longitude</span> <span>${element.longitude}</span></p>
+                    <p><span>landing attempts</span> <span>${element.landing_attempts}</span></p>
+                    <p><span>landing successes</span> <span>${element.landing_successes}</span></p>
+                    <p><span></span><a href="${element.wikipedia}" style="color:#fff;"><span>🌐 Wikipedia</span></p></a>
                 </div>
-                <div class="right__tags">
-                    <p class="hader__info">land landings</p>
-                    <p class="content__rigth">${element.asds_landings}</p>
-                </div>
-
-                <div class="right__tags">
-                <p class="hader__info">land attempts</p>
-                <p class="content__rigth">${element.asds_attempts}</p>
-            </div>
-
+                
             </article>
             <!-- ----------------------------- sidebar rigth -------------------------------- -->
             
@@ -150,11 +131,6 @@ export const coresContent = async (docsJson)=>{
         <img src="../storage/img/asd.svg" style="height: 60%;" alt="">
         <p>launchpads</p>
     </a>
-    <a href="payloads.html">
-        <img src="../storage/img/payf.svg" style="height: 60%;" alt="">
-        <p>payloads</p>
-    </a>
-
     </section>
     <article class=pagination__content>
       <div id="pagination" class="pagination">
@@ -164,7 +140,5 @@ export const coresContent = async (docsJson)=>{
       </div> 
     </article>
 </footer>
-        `;
-    });
-    return plantilla;
-}
+</body>
+</html>
