@@ -140,6 +140,12 @@ export const capsuleContent = async (docsJson) =>{
             <img src="../storage/img/histo.svg" style="height: 60%;" alt="">
             <p>history</p>
         </a>
+
+        
+        <a href="launchpads.html">
+            <img src="../storage/img/asd.svg" style="height: 60%;" alt="">
+            <p>launchpads</p>
+        </a>
         </section>
 
         <article class=pagination__content>
