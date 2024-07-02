@@ -1,9 +1,15 @@
-export const launchContent = async (jsonDocs)=>{
-    let plantilla= '';
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="../css/dragons.css">
+    <script type="module" src="../js/dragons.js" defer></script>
+</head>
+<body id="body">
 
-    jsonDocs.forEach(element => {
-        plantilla += /*html*/` 
-        <img class="bg" src="../storage/img/bg_planets.svg" alt="">
+    <img class="bg" src="../storage/img/bg_planets.svg" alt="">
         <header id="header" class="header">
             <h1>${(element.name).toUpperCase()}</h1>
         </header>
@@ -157,7 +163,7 @@ export const launchContent = async (jsonDocs)=>{
                         
                         <div class="image__countain">
                         <div class="image__Setter">
-                            ${element.links.patch.small ? `<img src="${element.links.patch.small}" style="  widht:100%; filter: drop-shadow(4px 4px 8px #474747);">` : `<img src="../storage/img/crew.png" style=" height: 100%; widht:100%; filter: drop-shadow(4px 4px 8px #474747);">`}
+                                <img src="" style="width:100%; filter: drop-shadow(4px 4px 8px #474747);">` : `<img src="../storage/img/crew.png" style=" height: 100%; widht:100%; filter: drop-shadow(4px 4px 8px #474747);">
                         </div>
                       
                         </div>
@@ -321,12 +327,7 @@ export const launchContent = async (jsonDocs)=>{
         <img src="" style="height: 60%;" alt="">
         <p>company</p>
     </a>
-
-    <a href="dragons.html">
-        <img src="" style="height: 60%;" alt="">
-        <p>dragons</p>
-    </a>
-    </section>
+</section>
     <article class=pagination__content>
       <div id="pagination" class="pagination">
         <article id="Prev">Prev</article>
@@ -335,8 +336,5 @@ export const launchContent = async (jsonDocs)=>{
       </div> 
     </article>
 </footer>
-        `;   
-    });
-    return plantilla; 
-}
-
+</body>
+</html>

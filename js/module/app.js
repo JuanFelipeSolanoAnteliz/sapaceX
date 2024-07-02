@@ -188,3 +188,52 @@ export const oneShip =async(page)=>{
     let data = await res.json();
     return data;
 }
+
+export const dataCompany = async()=>{
+
+    let config = {
+        method:'GET',
+        headers:{"content-type":"application/json"}
+    };
+
+    let res = await fetch(`https://api.spacexdata.com/v4/company`);
+    let data = await res.json();
+    return data;
+}
+
+export const oneDragon =async (page)=>{
+    let config ={
+        method:'POST',
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify({
+            query:{},
+            options:{
+                limit:1,
+                page:page
+            }
+        })
+    };
+
+    let res = await fetch(`https://api.spacexdata.com/v4/dragons/query`,config);
+    let data = await res.json();
+    return data;
+}
+
+export const oneHistory = async (page)=>{
+    
+    let config ={
+        method:'POST',
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify({
+            query:{},
+            options:{
+                limit:1,
+                page:page
+            }
+        })
+    };
+
+    let res = await fetch(`https://api.spacexdata.com/v4/history`,config);
+    let data = await res.json();
+    return data;
+}

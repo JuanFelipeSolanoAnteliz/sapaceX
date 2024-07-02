@@ -102,34 +102,43 @@ export const coresContent = async (docsJson)=>{
 
     <footer class="footer">
     <section class="footer__section">
-        <a href="../index.html">
-            <img src="../storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
-            <p>rockets</p>
+    <a href="../index.html">
+        <img src="../storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
+        <p>rockets</p>
+    </a>
+    <a href="section.html">
+        <img src="../storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
+        <p>capsules</p>
+    </a>
+    <a href="cores.html">
+        <img src="../storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
+        <p> cores</p>
+    </a>
+    <a href="crew.html">
+        <img src="" style="height: 60%;" alt="">
+        <p> crew</p>
+    </a>
+    <a href="launches.html">
+        <img src="" style="height: 60%;" alt="">
+        <p>launches</p>
+    </a>
+    <a href="landpads.html">
+        <img src="" style="height: 60%;" alt="">
+        <p>landpads</p>
         </a>
-        <a href="section.html">
-            <img src="../storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
-            <p>capsules</p>
-        </a>
-        <a href="cores.html">
-            <img src="../storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
-            <p> cores</p>
-        </a>
-        <a href="crew.html">
-            <img src="" style="height: 60%;" alt="">
-            <p> crew</p>
-        </a>
-        <a href="launches.html">
-            <img src="" style="height: 60%;" alt="">
-            <p>launches</p>
-        </a>
-        <a href="landpads.html">
-            <img src="" style="height: 60%;" alt="">
-            <p>landpads</p>
-        </a>
-        <a href="ships.html">
-            <img src="" style="height: 60%;" alt="">
-            <p>ships</p>
-        </a>
+    <a href="ships.html">
+        <img src="" style="height: 60%;" alt="">
+        <p>ships</p>
+    </a>
+    <a href="company.html">
+        <img src="" style="height: 60%;" alt="">
+        <p>company</p>
+    </a>
+
+    <a href="dragons.html">
+        <img src="" style="height: 60%;" alt="">
+        <p>dragons</p>
+    </a>
     </section>
     <article class=pagination__content>
       <div id="pagination" class="pagination">

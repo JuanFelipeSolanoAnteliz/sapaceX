@@ -1,8 +1,9 @@
-export const launchContent = async (jsonDocs)=>{
-    let plantilla= '';
 
-    jsonDocs.forEach(element => {
-        plantilla += /*html*/` 
+export const dragonsContent = async (docs)=>{
+    let plantilla='';
+
+    docs.forEach(element => {
+        plantilla +=/*html*/`
         <img class="bg" src="../storage/img/bg_planets.svg" alt="">
         <header id="header" class="header">
             <h1>${(element.name).toUpperCase()}</h1>
@@ -18,11 +19,11 @@ export const launchContent = async (jsonDocs)=>{
                         <div class="img">
                             <img src="../storage/img/mech.svg" alt="">
                         </div>
-                        <h3 >Webcast</h3>
+                        <h3 >First flight</h3>
                     </div>
-                    <a href="${element.links.webcast}">
-                    <small>🌐 Watch</small>
-                    </a>
+                  
+                    <small>${element.first_flight}</small>
+              
                 </div>
 
     
@@ -32,11 +33,9 @@ export const launchContent = async (jsonDocs)=>{
                             <div class="img">
                                 <img src="../storage/img/mech.svg" alt="">
                             </div>
-                            <h3 >Info</h3>
+                            <h3 >Diameter</h3>
                         </div>
-                        <a href="${element.links.wikipedia}">
-                            <small> 🗒️ Wikipedia </small>
-                        </a>
+                            <small>${element.diameter.meters+ 'F' + ' - ' + element.diameter.feet +'F'}</small>
                 </div>                
 
                 <div class="description__content">
@@ -45,9 +44,9 @@ export const launchContent = async (jsonDocs)=>{
                             <div class="img">
                                 <img src="../storage/img/mech.svg" alt="">
                             </div>
-                            <h3>Rocket</h3>
+                            <h3>Height trunk</h3>
                         </div>
-                            <small> ${element.rocket} </small>
+                            <small> ${element.height_w_trunk.meters +'M' +' - '+ element.height_w_trunk.feet +'F'} </small>
                         </div>
                 </div>   
                 
@@ -57,9 +56,10 @@ export const launchContent = async (jsonDocs)=>{
                             <div class="img">
                                 <img src="../storage/img/mech.svg" alt="">
                             </div>
-                            <h3>Utc Date</h3>
+                            <h3>Thrust</h3>
                         </div>
-                            <small> ${element.static_fire_date_utc} </small>
+                        <small>${element.thrusters && element.thrusters.length > 0 && element.thrusters[0].thrust ? element.thrusters[0].thrust.kN + ' kN - ' + element.thrusters[0].thrust.lbf + ' lbf' : ''}</small>
+
                         </div>
 
                 <div class="description__content">
@@ -75,6 +75,33 @@ export const launchContent = async (jsonDocs)=>{
 
                 </div>   
 
+                <div class="description__content">
+                <div class="description__content">
+                    <div class="title__section">
+                        <div class="img">
+                            <img src="../storage/img/mech.svg" alt="">
+                        </div>
+                        <h3> Fuel 2</h3>
+                    </div>
+                        <small> ${element.thrusters[0].fuel_1} </small>
+                    </div>
+
+            </div>   
+
+            <div class="description__content">
+            <div class="title__section">
+                <div class="img">
+                    <img src="../storage/img/mech.svg" alt="">
+                </div>
+                <h3> ISP</h3>
+            </div>
+                <small> ${element.thrusters[0].isp} </small>
+            </div>
+
+    </div>   
+
+
+
 
             </article>
             <!-- -----------------------------side bar left---------------------------------- -->
@@ -82,15 +109,11 @@ export const launchContent = async (jsonDocs)=>{
             <!-- -------------------------------- center ------------------------------------ -->
             <article class="center__content">
                 <section class="progressbar__round">
-    
-                
-                       
                         
                         <article class="cat">
                             <img src="../storage/img/spacexBlue.png" alt="">
                         </article>
                         
-                       
                     </div>
                         
                         
@@ -100,54 +123,53 @@ export const launchContent = async (jsonDocs)=>{
                     <article class="card">
                         
                         <div class="asd">
-                            <h3>Fairings</h3>
+                            <h3>Heat shield</h3>
                         
                             <div class="content__information">
                                 <div class="features__information">
-                                    <small>Reused:</small>
-                                    <span>${element.fairings?.reused ?? ''}</span>
+                                    <small>Material:</small>
+                                    <span>${element.heat_shield.material}</span>
                                 </div>
 
                                 <div class="features__information">
-                                    <small>Recovery attempt:</small>
-                                    <span>${element.fairings?.recovery_attempt ?? ''}</span>
+                                    <small>Size meters:</small>
+                                    <span>${element.heat_shield.size_meters + 'M'}</span>
                                 </div>
 
                                 <div class="features__information">
-                                    <small>recovered:</small>
-                                    <span>${element.fairings?.recovered ?? ''}</span>
+                                    <small>Temp degrees:</small>
+                                    <span>${element.heat_shield.temp_degrees}</span>
                                 </div>
                                 <div class="features__information">
-                                    <small>ships:</small>
-                                    <span>${element.fairings?.ships?? ''}</span>
+                                    <small>Dev partner:</small>
+                                    <span>${element.heat_shield.dev_partner}</span>
                                 </div>
                             </div>
                         </div>
-                        <h3>Rocket Information</h3>
+                        <h3>Playload Data</h3>
                         
-                        <span class="line"></span>
                         
                         <div class="content__information">
                             <div class="features__information">
-                                <small>Article:</small>
-                                <a href="${element.links.article}">
-                                <span>🗒️Read more</span>
-                                </a>
+                                <small>Launch mass:</small>
+                           
+                                <span>${element.launch_payload_mass.kg+' kg'}</span>
+                              
                             </div>
     
                             <div class="features__information">
-                                <small>Date Unix:</small>
-                                <span>${element.static_fire_date_unix}</span>
+                                <small>Launch vol:</small>
+                                <span>${element.launch_payload_vol.cubic_meters+' cm3'}</span>
                             </div>
     
                             <div class="features__information">
-                                <small>Net: </small>
-                                <span>${element.net === false ? "none":"Active"}</span>
+                                <small>Return mass: </small>
+                                <span>${element.return_payload_mass.kg +' kg'}</span>
                             </div>
     
                             <div class="features__information">
-                                <small>Window: </small>
-                                <span>${element.window}</span>
+                                <small>Return vol: </small>
+                                <span>${element.return_payload_vol.cubic_meters+' cm3'}</span>
                             </div>
     
                         </div>
@@ -157,62 +179,60 @@ export const launchContent = async (jsonDocs)=>{
                         
                         <div class="image__countain">
                         <div class="image__Setter">
-                            ${element.links.patch.small ? `<img src="${element.links.patch.small}" style="  widht:100%; filter: drop-shadow(4px 4px 8px #474747);">` : `<img src="../storage/img/crew.png" style=" height: 100%; widht:100%; filter: drop-shadow(4px 4px 8px #474747);">`}
+                            ${Array.isArray(element.flickr_images)  && element.flickr_images.length > 0 ? element.flickr_images.map(image=> `<img src="${image}" referrerpolicy="no-referrer" style="width:100%;">`).join('') : `` }
                         </div>
                       
                         </div>
                     </article>
                         <article class="card">
                         <div class="asd">
-                            <h3>Reddit</h3>
+                            <h3>Trunk</h3>
                         
                             <div class="content__information">
                                 <div class="features__information">
-                                    <small>Campaign:</small>
-                                    <a href="${element.links.reddit.campaign}">
-                                        <span> 🗒️ click here </span>
-                                    </a>
+                                    <small>Trunk volume:</small>
+                                        <span> ${element.trunk.trunk_volume.cubic_meters} </span>
                                 </div>
 
                                 <div class="features__information">
-                                    <small>Launch:</small>
-                                    <span>${element.links.reddit.launch}</span>
+                                    <small>Cargo:</small>
+                                    <span>${element.trunk.cargo.solar_array} </span>
                                 </div>
 
                                 <div class="features__information">
-                                    <small>Media:</small>
-                                    <span>${element.links.reddit.media}</span>
+                                    <small>Unpressurized cargo:</small>
+                                    <span>${element.trunk.cargo.unpressurized_cargo}</span>
                                 </div>
                                 <div class="features__information">
                                     <small>Recovery:</small>
-                                    <span>${element.links.reddit.recovery}</span>
+                                    <span>element.links.reddit.recovery</span>
                                 </div>
                             </div>
                         </div>
     
-                        <h3>Success</h3>
+                        <h3>About</h3>
                         
                         <span class="line"></span>
                         
                         <div class="content__information">
                             <div class="features__information">
-                                <small>Success: </small>
-                                <span>${element.success}</span>
+                                <small>Name: </small>
+                                <span>${element.name}</span>
                             </div>
     
                             <div class="features__information">
-                                <small>Time: </small>
-                            <span>${element.failures && element.failures.length > 0 && element.failures[0].time !== undefined ? element.failures[0].time : ''}</span>
+                                <small>Type: </small>
+                            <span>${element.type}</span>
                         </div>
                         
                         <div class="features__information">
-                        <small>Altitude: </small>
-                        <span>${element.failures && element.failures.length > 0 && element.failures[0].altitude !== null ? element.failures[0].altitude : "none"}</span>
+                        <small>Active: </small>
+                        <span> ${element.active}</span>
                     </div>
                     
                     <div class="features__information">
-                        <small>Reason: </small>
-                        <span>${element.failures && element.failures.length > 0 && element.failures[0].reason !== null ? element.failures[0].reason : "none"}</span>
+                        <small>Crew capacity: </small>
+                        <span>${element.crew_capacity}</span>
                     </div>
                     
     
@@ -227,61 +247,53 @@ export const launchContent = async (jsonDocs)=>{
             <article class="sidebar__rigth">
                 <div class="features">
                     <div class="progressbar">
-                    <h3>Launch details </h3>
+                    <h3>Description</h3>
                     <small class="cifras">
-                            <p>${element.details}</p>
+                            <p>${element.description}<a href="${element.wikipedia}" style="color:#FFF; font-size:bolder;"> Read more...</a></p>
                     </small>
                     </div>
                 </div>
-    
+                
                 <div class="features">
                     <div class="progressbar">
-                    <h3>Playloads </h3>
-                    <small class="cifras"> 
-                        <p>${element.payloads}</p>
+                    <h3>Type thruster</h3>
+                    <small class="cifras">
+                            <p>${element.thrusters[0].type}</p>
                     </small>
                     </div>
                 </div>
-    
-                <div class="features">
-                    <div class="progressbar">
-                        <h3>Launchpad</h3>
-                        
-                        <small class="cifras">
-                            <p>${element.launchpad}</p>
 
-                        </small>
-                    </div>
-                </div>
-    
                 <div class="features">
                 <div class="progressbar">
-                    <h3>Date local</h3>             
-                    <small class="cifras">
-                        <p>${element.date_local}</p>
-                    </small>
+                <h3>Amount</h3>
+                <small class="cifras">
+                        <p>${element.thrusters[0].amount}</p>
+                </small>
                 </div>
-                </div>
-    
-                <div class="features">
-                <div class="progressbar">
-                    <h3> Date precision </h3>
-                    <small class="cifras">
-                        <p>${element.date_precision}</p>
-                    </small>
-                </div>
-                </div>
-    
-                <div class="features">
-                <div class="progressbar">
-                    <h3>Upcoming </h3>
-                    <small class="cifras">
-                        <p>${element.upcoming}</p>
-                    </small>
-                </div>
-                </div>
-    
-            </article>
+            </div>
+
+            
+            <div class="features">
+            <div class="progressbar">
+            <h3>Pods</h3>
+            <small class="cifras">
+                    <p>${element.thrusters[0].pods}</p>
+            </small>
+            </div>
+        </div>
+
+
+        <div class="features">
+            <div class="progressbar">
+            <h3>Fuel 2</h3>
+            <small class="cifras">
+                    <p>${element.thrusters[0].fuel_2}</p>
+            </small>
+            </div>
+        </div>
+
+
+
             <!-- ----------------------------- sidebar rigth -------------------------------- -->
             
         </section>
@@ -326,7 +338,7 @@ export const launchContent = async (jsonDocs)=>{
         <img src="" style="height: 60%;" alt="">
         <p>dragons</p>
     </a>
-    </section>
+</section>
     <article class=pagination__content>
       <div id="pagination" class="pagination">
         <article id="Prev">Prev</article>
@@ -335,8 +347,7 @@ export const launchContent = async (jsonDocs)=>{
       </div> 
     </article>
 </footer>
-        `;   
+        `;
     });
     return plantilla; 
 }
-

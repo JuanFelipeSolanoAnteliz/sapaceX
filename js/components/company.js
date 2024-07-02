@@ -1,14 +1,11 @@
 
-
-export const capsuleContent = async (docsJson) =>{
+export const companyContent = async(list)=>{
     let plantilla = '';
-
-    docsJson.forEach(element => {
-        plantilla +=/*html*/`
-        <body id="body">
+    list.forEach(element => {
+        plantilla += /*html*/`
         <img class="bg" src="../storage/img/bg_planets.svg" alt="">
         <header id="header" class="header">
-            <h1>${element.serial}</h1>
+
         </header>
         <main class="main">
             <section class="main__section__content">
@@ -16,31 +13,20 @@ export const capsuleContent = async (docsJson) =>{
                 <article class="capusles__left">
                     <div class="id__capsula">
                         <div id="hader__info">
-                            ID
-                        </div>
-                        <div id="content">
-                            ${element.id}
+                            Launches
+                    </div>
+                        <div class="intercalado">
+                            <p><span> Founded: </span> <span>${element.founded}</span></p>
+                            <p><span>Founder: </span> <span>${element.founder}</span></p>
+                            <p><span > Employees: </span> <span>${element.employees}</span></p>
+                            <p><span>name: </span> <span>${element.name}</span></p>
+                            <p><span>Website: </span> <a href="${element.links.website}">➡️ More Info<span></span></a></p>
+                            <p><span>Flickr: </span> <a href="${element.links.flickr}">  ➡️ More Info<span></span></a></p>
+                            <p><span>Twitter: </span> <a href="${element.links.twitter}"><span>📱 Visit</span></a></p>
+                            <p><span>Elon twitter: <a href="${element.links.elon_twitter}"></span>📱 Visit<span></span></a></p>
                         </div>
                     </div>
     
-                    <div class="id__capsula">
-                        <div id="hader__info">
-                            Status
-                        </div>
-                        <div id="content">
-                            ${element.status}
-                        </div>
-                    </div>
-    
-    
-                    <div class="id__capsula">
-                        <div id="hader__info">
-                            Type
-                        </div>
-                        <div id="content">
-                            ${element.type}
-                        </div>
-                    </div>
                 </article>
                 <!-- -----------------------------side bar left---------------------------------- -->
     
@@ -51,7 +37,7 @@ export const capsuleContent = async (docsJson) =>{
                         </div>
                         
                             <article class="cat">
-                                <img src="../storage/img/Space X Dragon.svg">
+                            <img src="../storage/img/gray.png"  referrerpolicy="no-referrer">
                             </article>
                         
                         </div>
@@ -60,14 +46,10 @@ export const capsuleContent = async (docsJson) =>{
                         </div>
                     </section>
                     <section class="main__content">
-                       
+                    
                         <div class="launches">
-                            <p>Launches</p>
-                            <p>${element.launches[0]}</p>
-                        </div>
-                        <div class="last__update">
-                            <p>Last update</p>
-                            <p>${element.last_update}</p>
+                            <p>Sumary</p>
+                            <p>${element.summary} </p>
                         </div>
         
                     </section>
@@ -76,20 +58,20 @@ export const capsuleContent = async (docsJson) =>{
     
                 <!-- ----------------------------- sidebar rigth -------------------------------- -->
                 <article class="sidebar__rigth">
-                   
-                    <div class="right__tags">
-                        <p class="hader__info">Reuse count</p>
-                        <p class="content__rigth">${element.reuse_count}</p>
+                    <div class="id__capsula">
+                        <div id="hader__info" style="color: #fff">Info</div>
                     </div>
-                    <div class="right__tags">
-                        <p class="hader__info">water landings</p>
-                        <p class="content__rigth">${element.water_landings}</p>
+                    <div class= "intercalado" >
+                        <p><span > valuation: </span> <span>${element.valuation}</span></p>
+                        <p><span>Cto propulsion: </span> <span>${element.cto_propulsion}</span></p>
+                        <p><span>COO: </span> <span>${element.coo}</span></p>
+                        <p><span>CTO: </span> <span>${element.cto}</span></p>
+                        <p><span>CEO: </span> <span>${element.ceo}</span></p>
+                        <p><span>Test sites: </span> <span>${element.test_sites}</span></p>
+                        <p><span>Launch sites: </span> <span>${element.launch_sites}</span></p>
+                        <p><span>vehicles: </span> <span>${element.vehicles}</span></p>
                     </div>
-                    <div class="right__tags">
-                        <p class="hader__info">land landings</p>
-                        <p class="content__rigth">${element.land_landings}</p>
-                    </div>
-    
+                    
                 </article>
                 <!-- ----------------------------- sidebar rigth -------------------------------- -->
                 
@@ -136,16 +118,8 @@ export const capsuleContent = async (docsJson) =>{
             <p>dragons</p>
         </a>
         </section>
-        <article class=pagination__content>
-          <div id="pagination" class="pagination">
-            <article id="Prev">Prev</article>
-                <section id="number__page" ></section>
-            <article id="Next">Next</article>
-          </div> 
-        </article>
     </footer>
-    </body>
-        `; 
+        `;   
     });
     return plantilla;
 }
