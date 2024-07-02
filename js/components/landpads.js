@@ -6,7 +6,7 @@ export const landContent = async (jsonDocs) =>{
         plantilla +=/*html*/`
         <img class="bg" src="../storage/img/bg_planets.svg" alt="">
         <header id="header" class="header">
-            <h1>  element.serial </h1>
+            <h1> ${element.name} </h1>
         </header>
         <main class="main">
             <section class="main__section__content">
@@ -16,9 +16,9 @@ export const landContent = async (jsonDocs) =>{
                         <div id="hader__info">
                             Launches
                     </div>
-                    <div id="content">
-                            ${Array.isArray(element.launches) && element.launches.length > 0 ? element.launches.map( launch =>`<p>${launch}</p>`).join('') : `<p></p>`}
-                        </div>
+                    <div class="intercalado">
+                        ${Array.isArray(element.launches) && element.launches.length > 0 ? element.launches.map( launch =>`<p>${launch}</p>`).join('') : `<p></p>`}
+                    </div>
 
                 </article>
                 <!-- -----------------------------side bar left---------------------------------- -->
@@ -30,7 +30,7 @@ export const landContent = async (jsonDocs) =>{
                         </div>
                         
                             <article class="cat">
-                                <img src="../storage/img/landpads2.gif">
+                            <img src="${element.images && element.images.large && element.images.large.length > 0 ? element.images.large : '../storage/img/landpads2.gif'}" referrerpolicy="no-referrer">
                             </article>
                         
                         </div>
@@ -45,6 +45,10 @@ export const landContent = async (jsonDocs) =>{
                             <p>  ${element.id} </p>
                         </div>
 
+                        <div class="launches">
+                            <p>Details</p>
+                            <p>${element.details} </p>
+                        </div>
         
                     </section>
                 </article>
@@ -52,20 +56,22 @@ export const landContent = async (jsonDocs) =>{
 
                 <!-- ----------------------------- sidebar rigth -------------------------------- -->
                 <article class="sidebar__rigth">
-                
-                    <div class="right__tags">
-                        <p class="hader__info">Reuse count</p>
-                        <p class="content__rigth">  element reuse_count </p>
+                    <div class="id__capsula">
+                        <div id="hader__info" style="color: #fff">Info</div>
                     </div>
-                    <div class="right__tags">
-                        <p class="hader__info">water landings</p>
-                        <p class="content__rigth">  element water_landings </p>
+                    <div class= "intercalado" >
+                        <p><span > Full name: </span> <span>${element.full_name}</span></p>
+                        <p><span>Status</span> <span>${element.status}</span></p>
+                        <p><span>Type</span> <span>${element.type}</span></p>
+                        <p><span>locality</span> <span>${element.locality}</span></p>
+                        <p><span>region</span> <span>${element.region}</span></p>
+                        <p><span>latitude</span> <span>${element.latitude}</span></p>
+                        <p><span>longitude</span> <span>${element.longitude}</span></p>
+                        <p><span>landing attempts</span> <span>${element.landing_attempts}</span></p>
+                        <p><span>landing successes</span> <span>${element.landing_successes}</span></p>
+                        <p><span></span><a href="${element.wikipedia}" style="color:#fff;"><span>🌐 Wikipedia</span></p></a>
                     </div>
-                    <div class="right__tags">
-                        <p class="hader__info">land landings</p>
-                        <p class="content__rigth">  element land_landings </p>
-                    </div>
-
+                    
                 </article>
                 <!-- ----------------------------- sidebar rigth -------------------------------- -->
                 
@@ -73,37 +79,41 @@ export const landContent = async (jsonDocs) =>{
         </main>
 
         <footer class="footer">
-            <section class="footer__section">
-                <a href="../index.html">
-                    <img src="../storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
-                    <p>Rockets</p>
-                </a>
-                <a href="views/section.html">
-                    <img src="../storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
-                    <p>Capsules</p>
-                </a>
-                <a href="">
-                    <img src="../storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
-                    <p> Cores</p>
-                </a>
-                <a href="#">
-                    <img src="" style="height: 60%;" alt="">
-                    <p> section</p>
-                </a>
-                <a href="#">
-                    <img src="" style="height: 60%;" alt="">
-                    <p> section</p>
-                </a>
+        <section class="footer__section">
+            <a href="../index.html">
+                <img src="../storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
+                <p>rockets</p>
+            </a>
+            <a href="section.html">
+                <img src="../storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
+                <p>capsules</p>
+            </a>
+            <a href="cores.html">
+                <img src="../storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
+                <p> cores</p>
+            </a>
+            <a href="crew.html">
+                <img src="" style="height: 60%;" alt="">
+                <p> crew</p>
+            </a>
+            <a href="launches.html">
+                <img src="" style="height: 60%;" alt="">
+                <p>launches</p>
+            </a>
+            <a href="landpads.html">
+                <img src="" style="height: 60%;" alt="">
+                <p>landpads</p>
+            </a>
 
-            </section>
-            <article class=pagination__content>
-            <div id="pagination" class="pagination">
-                <article id="Prev">Prev</article>
-                    <section id="number__page" ></section>
-                <article id="Next">Next</article>
-            </div> 
-            </article>
-        </footer>
+        </section>
+        <article class=pagination__content>
+          <div id="pagination" class="pagination">
+            <article id="Prev">Prev</article>
+                <section id="number__page" ></section>
+            <article id="Next">Next</article>
+          </div> 
+        </article>
+    </footer>
         `;
     });
     return plantilla; 

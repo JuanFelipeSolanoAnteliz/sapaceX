@@ -288,37 +288,41 @@ export const launchContent = async (jsonDocs)=>{
     </main>
     
     <footer class="footer">
-        <section class="footer__section">
-            <a href="#">
-                <img src="../storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
-                    <p>Rockets</p>
-                </a>
-                <a href="section.html">
-                    <img src="../storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
-                    <p>Capsules</p>
-                </a>
-                <a href="cores.html">
-                    <img src="../storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
-                    <p> Cores</p>
-                </a>
-                <a href="crew.html">
-                    <img src="../storage/img/crewFooter.svg" style="height: 60%;" alt="">
-                    <p> crew</p>
-                </a>
-                <a href="">
-                    <img src="../storage/img/launchFooter.svg" style="height: 60%;" alt="">
-                    <p> launches</p>
-                </a>
-        
-            </section>
-            <article class=pagination__content>
-            <div id="pagination" class="pagination">
-                <article id="Prev">Prev</article>
-                    <section id="number__page" ></section>
-                <article id="Next">Next</article>
-            </div> 
-            </article>
-        </footer>
+    <section class="footer__section">
+        <a href="../index.html">
+            <img src="../storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
+            <p>rockets</p>
+        </a>
+        <a href="section.html">
+            <img src="../storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
+            <p>capsules</p>
+        </a>
+        <a href="cores.html">
+            <img src="../storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
+            <p> cores</p>
+        </a>
+        <a href="crew.html">
+            <img src="" style="height: 60%;" alt="">
+            <p> crew</p>
+        </a>
+        <a href="launches.html">
+            <img src="" style="height: 60%;" alt="">
+            <p>launches</p>
+        </a>
+        <a href="landpads.html">
+            <img src="" style="height: 60%;" alt="">
+            <p>landpads</p>
+        </a>
+
+    </section>
+    <article class=pagination__content>
+      <div id="pagination" class="pagination">
+        <article id="Prev">Prev</article>
+            <section id="number__page" ></section>
+        <article id="Next">Next</article>
+      </div> 
+    </article>
+</footer>
         `;   
     });
     return plantilla; 

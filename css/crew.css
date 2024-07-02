@@ -319,7 +319,7 @@ body{
 }
 
 .footer__section a{
-    background: red;
+    /* background: red; */
     display: flex;
     flex-direction: column;
     width: 7%;

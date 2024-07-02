@@ -170,6 +170,8 @@ body{
     height: 70%;
 }
 
+
+
 .card{
     /* background: violet; */
     width: 30%;
@@ -476,3 +478,6 @@ body{
     justify-content: center;
     color: var(--withe--);
 }
+
+
+

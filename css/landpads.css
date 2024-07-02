@@ -52,7 +52,7 @@ body{
     display: flex;
     width: 20%;
     height: 100%;
-    padding-inline: 10px;
+    /* padding-inline: 10px; */
     flex-direction: column;
     gap: 10px;
     overflow-y: scroll;
@@ -61,6 +61,7 @@ body{
     border-style: inset;
     border-color: var(--color-three--);
     border-width: 1px;
+    position: relative;
 }
 .description__content{
     display: flex;
@@ -140,18 +141,18 @@ body{
 
 .cat{
     /* background: green; */
-    width: 40%;
+    width: 60%;
     height: 135%;
     display: flex;
     align-items: center;
     justify-content: center;
-    padding-top: 15%;
+    padding-top: 5%;
 }
 
 .cat img{
-    height: 350px;
+    width: 100%;
+    height: 100%;
     border-radius: 25px;
-    transform: rotate(90deg);
 }
 
 .main__content{
@@ -256,14 +257,11 @@ body{
     /* background:var(--color-two--); */
     display:flex;
     flex-direction: column;
-    justify-content: center;
     width: 30%;
     height: 50%;
     border-radius: 20px;
-    padding-inline: 10px;
     overflow-y: scroll;
     scrollbar-width: none;
-    gap: 10px;
     margin-right: 40px;
     border-width: 1px;
     border-style: outset;
@@ -413,7 +411,32 @@ body{
     width: 100%;
     height: 50px;
     
+    
 }
+
+.intercalado{
+    width: 100%;
+    color: var(--white--);
+
+}
+
+.intercalado > *:nth-child(odd) {
+    background-color: var(--color-two--); 
+    text-align: center;
+    padding-block: 5px;
+    font-size: smaller;
+    font-family:'roboto-Bold';
+}
+
+.intercalado > *:nth-child(even) {
+    background-color: var(--color-one--);
+    text-align: center;
+    padding-block: 5px;
+    font-size: smaller;
+    font-family:'roboto-Bold';
+
+}
+
 
 #hader__info{
     background: var(--color-one--);
@@ -452,15 +475,16 @@ body{
     display: flex;
     width: 30%;
     height: 50%;
-    padding-inline: 10px;
+    /* padding-inline: 10px; */
     flex-direction: column;
     gap: 10px;
     overflow-y: scroll;
     scrollbar-width: none;
-    justify-content: center;
+    /* justify-content: center; */
     color: var(--withe--);
     border-radius: 20px;
     margin-left: 40px;
+    position: relative;
 }
 
 .right__tags{
@@ -488,6 +512,8 @@ body{
     font-size: small;
     padding-block: 5px;
     border-color: var(--color-three--);
+
+
 }
 
 .content__rigth{
@@ -510,7 +536,7 @@ body{
     width:60%;
     text-align: center;
     color: var(--withe--);
-    height:60px;
+    height:90px;
     border-radius: 10px;
     overflow: hidden;
     margin-top: 20px;
@@ -521,7 +547,7 @@ body{
 
 .launches :nth-child(1) {
     /* background: #20213D; */
-    height: 50%;
+    height: 30%;
     border-style:solid ;
     border-inline: none;
     border-top: none;
@@ -531,14 +557,17 @@ body{
     font-family: 'roboto-Light';
     font-size: small;
     padding-block: 5px;
+
 }
 
 .launches :nth-child(2){
     /* background: var(--color-two--); */
-    height: 50%;
+    height: 70%;
     align-content: center;
     font-family: 'roboto-Bold';
     font-size: smaller;
+    overflow-y: scroll;
+    scrollbar-width: none;
 
 }
 
@@ -576,4 +605,16 @@ body{
     font-size: smaller;
 
 
+}
+
+.pRight{
+    display: flex;
+    justify-content: space-between;
+    padding-inline: 10px ;
+
+}
+
+
+.intercalado p{
+    color: var(--withe--);
 }
