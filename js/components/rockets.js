@@ -262,43 +262,48 @@ export const rocketPageContent = async (docs)=>{
     <footer class="footer">
     <section class="footer__section">
     <a href="index.html">
-        <img src="../storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
+        <img src="./storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
         <p>rockets</p>
     </a>
     <a href="views/section.html">
-        <img src="../storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
+        <img src="./storage/img/capsule-space-capsule-svgrepo-com.svg" style="height: 60%;" alt="">
         <p>capsules</p>
     </a>
     <a href="views/cores.html">
-        <img src="../storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
+        <img src="./storage/img/cpu-svgrepo-com.svg" style="height: 60%;" alt="">
         <p> cores</p>
     </a>
     <a href="views/crew.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="./storage/img/profile.svg" style="height: 60%;" alt="">
         <p> crew</p>
     </a>
     <a href="views/launches.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="./storage/img/launchFooter.svg" style="height: 60%;" alt="">
         <p>launches</p>
     </a>
     <a href="views/landpads.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="./storage/img/land.svg" style="height: 60%;" alt="">
         <p>landpads</p>
         </a>
     <a href="views/ships.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="./storage/img/ship.svg" style="height: 60%;" alt="">
         <p>ships</p>
     </a>
     <a href="views/company.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="./storage/img/company.svg" style="height: 60%;" alt="">
         <p>company</p>
     </a>
 
     <a href="views/dragons.html">
-    <img src="" style="height: 60%;" alt="">
-    <p>dragons</p>
-</a>
-</section>
+        <img src="./storage/img/dragonsFoot.svg" style="height: 60%;" alt="">
+        <p>dragons</p>
+    </a>
+
+    <a href="views/history.html">
+        <img src="./storage/img/histo.svg" style="height: 60%;" alt="">
+        <p>history</p>
+    </a>
+    </section>
         <article class=pagination__content>
           <div id="pagination" class="pagination">
             <article id="Prev">Prev</article>

@@ -366,9 +366,9 @@ body{
     padding-block:5px ;
     color: var(--withe--);
     font-family:'roboto-light';
-    align-items: center;
-    justify-content: center;
+    align-items:center;
 }
+
 .pagination__content{
     /* background: yellowgreen; */
     /* width: 20%; */

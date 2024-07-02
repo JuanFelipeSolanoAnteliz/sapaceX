@@ -323,6 +323,7 @@ body{
     padding-block:5px ;
     color: var(--withe--);
     font-family:'roboto-light';
+    align-items:center;
 }
 
 

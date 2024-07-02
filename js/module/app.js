@@ -233,7 +233,7 @@ export const oneHistory = async (page)=>{
         })
     };
 
-    let res = await fetch(`https://api.spacexdata.com/v4/history`,config);
+    let res = await fetch(`https://api.spacexdata.com/v4/history/query`,config);
     let data = await res.json();
     return data;
 }

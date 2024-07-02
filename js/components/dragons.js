@@ -314,31 +314,36 @@ export const dragonsContent = async (docs)=>{
         <p> cores</p>
     </a>
     <a href="crew.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="../storage/img/profile.svg" style="height: 60%;" alt="">
         <p> crew</p>
     </a>
     <a href="launches.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="../storage/img/launchFooter.svg" style="height: 60%;" alt="">
         <p>launches</p>
     </a>
     <a href="landpads.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="../storage/img/land.svg" style="height: 60%;" alt="">
         <p>landpads</p>
         </a>
     <a href="ships.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="../storage/img/ship.svg" style="height: 60%;" alt="">
         <p>ships</p>
     </a>
     <a href="company.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="../storage/img/company.svg" style="height: 60%;" alt="">
         <p>company</p>
     </a>
 
     <a href="dragons.html">
-        <img src="" style="height: 60%;" alt="">
+        <img src="../storage/img/dragonsFoot.svg" style="height: 60%;" alt="">
         <p>dragons</p>
     </a>
-</section>
+
+    <a href="history.html">
+        <img src="../storage/img/histo.svg" style="height: 60%;" alt="">
+        <p>history</p>
+    </a>
+    </section>
     <article class=pagination__content>
       <div id="pagination" class="pagination">
         <article id="Prev">Prev</article>
