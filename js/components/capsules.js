@@ -122,7 +122,10 @@ export const capsuleContent = async (docsJson) =>{
                 <img src="" style="height: 60%;" alt="">
                 <p>landpads</p>
             </a>
-
+            <a href="ships.html">
+                <img src="" style="height: 60%;" alt="">
+                <p>ships</p>
+            </a>
         </section>
         <article class=pagination__content>
           <div id="pagination" class="pagination">

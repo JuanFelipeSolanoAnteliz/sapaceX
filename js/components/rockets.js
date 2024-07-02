@@ -286,6 +286,10 @@ export const rocketPageContent = async (docs)=>{
                 <p> landpads</p>
             </a>
 
+            <a href="views/ships.html">
+            <img src="" alt="">
+            <p> landpads</p>
+        </a>
         </section>
         <article class=pagination__content>
           <div id="pagination" class="pagination">

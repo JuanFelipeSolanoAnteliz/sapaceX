@@ -1,12 +1,13 @@
 
 
-export const landContent = async (jsonDocs) =>{
-    let plantilla = '' ;
+export const shipContent = async(jsonDocs)=>{
+    let plantilla = '';
+
     jsonDocs.forEach(element => {
         plantilla +=/*html*/`
         <img class="bg" src="../storage/img/bg_planets.svg" alt="">
         <header id="header" class="header">
-            <h1> ${element.name} </h1>
+            <h1> ${(element.name).toUpperCase()} </h1>
         </header>
         <main class="main">
             <section class="main__section__content">
@@ -14,10 +15,17 @@ export const landContent = async (jsonDocs) =>{
                 <article class="capusles__left">
                     <div class="id__capsula">
                         <div id="hader__info">
-                            Launches
+                            Info
                     </div>
                     <div class="intercalado">
-                        ${Array.isArray(element.launches) && element.launches.length > 0 ? element.launches.map( launch =>`<p>${launch}</p>`).join('') : `<p></p>`}
+                        <p><span>Legacy id:</span> <span>${element.legacy_id}</span></p>
+                        <p><span>Model:</span> <span>${element.model === null ? 'none': element.model}</span></p>
+                        <p><span>Type:</span> <span>${element.type  === null ? 'none':element.type}</span></p>
+                        <p><span>roles:</span> <span>${element.roles && element.roles.length > 0 ? element.roles.join(', ') : ''}</span></p>
+                        <p><span>Imo</span> <span>${element.imo === null ? 'none': element.imo }</span></p>
+                        <p><span>Mmsi</span> <span>${element.mmsi === null ? 'none':element.mmsi }</span></p>
+                        <p><span>Abs</span> <span>${element.abs === null ? 'none': element.abs }</span></p>
+                        <p><span>Class</span> <span>${element.class === null ? 'none':element.class }</span></p>
                     </div>
 
                 </article>
@@ -30,7 +38,7 @@ export const landContent = async (jsonDocs) =>{
                         </div>
                         
                             <article class="cat">
-                            <img src="${element.images && element.images.large && element.images.large.length > 0 ? element.images.large : '../storage/img/landpads2.gif'}" referrerpolicy="no-referrer">
+                            <img src="${element.image  === null ? '../storage/img/shipasd.jpg' : element.image }" referrerpolicy="no-referrer">
                             </article>
                         
                         </div>
@@ -42,12 +50,16 @@ export const landContent = async (jsonDocs) =>{
                     
                         <div class="launches">
                             <p>ID</p>
-                            <p>  ${element.id} </p>
+                            <p>  ${element.id }</p>
                         </div>
 
                         <div class="launches">
-                            <p>Details</p>
-                            <p>${element.details} </p>
+                        <p>launches</p>
+                        <div class="intercalado">
+                                <p></p>
+                                ${Array.isArray(element.launches) && element.launches.length > 0 ? element.launches.map(launch =>`<p>${launch}</p>`).join(''): `<p>Here aren't any Launc :/</p>`}
+                            </div>
+                            
                         </div>
         
                     </section>
@@ -60,16 +72,15 @@ export const landContent = async (jsonDocs) =>{
                         <div id="hader__info" style="color: #fff">Info</div>
                     </div>
                     <div class= "intercalado" >
-                        <p><span > Full name: </span> <span>${element.full_name}</span></p>
-                        <p><span>Status</span> <span>${element.status}</span></p>
-                        <p><span>Type</span> <span>${element.type}</span></p>
-                        <p><span>locality</span> <span>${element.locality}</span></p>
-                        <p><span>region</span> <span>${element.region}</span></p>
-                        <p><span>latitude</span> <span>${element.latitude}</span></p>
-                        <p><span>longitude</span> <span>${element.longitude}</span></p>
-                        <p><span>landing attempts</span> <span>${element.landing_attempts}</span></p>
-                        <p><span>landing successes</span> <span>${element.landing_successes}</span></p>
-                        <p><span></span><a href="${element.wikipedia}" style="color:#fff;"><span>🌐 Wikipedia</span></p></a>
+                        <p><span>Mass kg</span> <span>${element.mass_kg === null ? 'none': element.mass_kg }</span></p>
+                        <p><span> Status: </span> <span>${element.status === null || element.status === "" ? 'none': element.status} </span></p>
+                        <p><span>Speed kn: </span> <span>${element.speed_kn === null ? 'none': element.speed_kn}</span></p>
+                        <p><span>Course deg: </span> <span>${element.course_deg === null ? 'none': element.course_deg}</span></p>
+                        <p><span>Mass lbs: </span> <span>${element.mass_lbs == null ? 'none': element.mass_lbs}</span></p>
+                        <p><span>Built: </span> <span>${element.year_built === null ? 'none' : element.year_built}</span></p>
+                        <p><span>Home port: </span> <span>${element.home_port === null ? 'none' : element.home_port }</span></p>
+                        <p><span>Latitude: </span> <span>${element.latitude === null ? 'none' : element.latitude }</span></p>
+                        <p><span>Longitude:</span> <span>${element.longitude === null ? 'none' : element.longitude }</span></p>
                     </div>
                     
                 </article>
@@ -119,5 +130,5 @@ export const landContent = async (jsonDocs) =>{
     </footer>
         `;
     });
-    return plantilla; 
-}
+    return plantilla;
+};
