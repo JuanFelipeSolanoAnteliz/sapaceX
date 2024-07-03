@@ -558,3 +558,12 @@ body{
 
 
 }
+
+.footer__section a > img{
+    width: 100%;
+    height: 100%;
+} 
+
+.footer__section a > p{
+    font-size: .7vw;
+}

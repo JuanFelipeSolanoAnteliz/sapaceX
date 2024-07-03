@@ -158,6 +158,7 @@ export const capsuleContent = async (docsJson) =>{
         </a>
 
         </section>
+        </footer>
         <article class=pagination__content>
           <div id="pagination" class="pagination">
             <article id="Prev">Prev</article>
@@ -165,7 +166,6 @@ export const capsuleContent = async (docsJson) =>{
             <article id="Next">Next</article>
           </div> 
         </article>
-    </footer>
     </body>
         `; 
     });

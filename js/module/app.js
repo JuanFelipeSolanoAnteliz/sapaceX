@@ -282,3 +282,7 @@ export const oneRoad = async ()=>{
     let data = await res.json();
     return data;
 };
+
+export const oneStarlink = async ()=>{
+    
+}

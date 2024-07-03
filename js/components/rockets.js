@@ -312,6 +312,11 @@ export const rocketPageContent = async (docs)=>{
     <a href="views/payloades.html">
         <img src="./storage/img/payf.svg" style="height: 60%;" alt="">
         <p>payloades</p>
+    </a>
+    
+    <a href="views/roadster.html">
+        <img src="./storage/img/payf.svg" style="height: 60%;" alt="">
+        <p>roadster</p>
     </a>    
     </section>
         <article class=pagination__content>

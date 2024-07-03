@@ -67,7 +67,7 @@ export const roadContent  = async (docs)=>{
                         <div id="hader__info" style="color: #fff">Info</div>
                     </div>
                     <div class= "intercalado" >
-                        <p><span>Mass kg</span> <span>${element.mass_kg === null ? 'none': element.mass_kg }</span></p>
+                        <p><span>Mass kg</span> <span>${element.launch_mass_kg === null ? 'none': element.launch_mass_kg }</span></p>
                         <p><span> inclination: </span> <span>${element.inclination === null || element.inclination === "" ? 'none': element.status} </span></p>
                         <p><span>longitude: </span> <span>${element.longitude === null ? 'none': element.longitude}</span></p>
                         <p><span>periapsis arg: </span> <span>${element.periapsis_arg === null ? 'none': element.periapsis_arg}</span></p>

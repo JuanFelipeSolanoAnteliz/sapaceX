@@ -184,7 +184,7 @@ export const dragonsContent = async (docs)=>{
                       
                         </div>
                     </article>
-                        <article class="card">
+                    <article class="card">
                         <div class="asd">
                             <h3>Trunk</h3>
                         
@@ -205,11 +205,12 @@ export const dragonsContent = async (docs)=>{
                                 </div>
                                
                         </div>
+                        </div>
     
+                        
+                        
+                        
                         <h3>About</h3>
-                        
-                        <span class="line"></span>
-                        
                         <div class="content__information">
                             <div class="features__information">
                                 <small>Name: </small>
@@ -217,20 +218,20 @@ export const dragonsContent = async (docs)=>{
                             </div>
     
                             <div class="features__information">
-                                <small>Type: </small>
-                            <span>${element.type}</span>
-                        </div>
+                                    <small>Type: </small>
+                                <span>${element.type}</span>
+                            </div>
                         
-                        <div class="features__information">
-                        <small>Active: </small>
-                        <span> ${element.active}</span>
-                    </div>
+                            <div class="features__information">
+                                <small>Active: </small>
+                                <span> ${element.active}</span>
+                            </div>
                     
-                    <div class="features__information">
-                        <small>Crew capacity: </small>
-                        <span>${element.crew_capacity}</span>
-                    </div>
-                    
+                            <div class="features__information">
+                                <small>Crew capacity: </small>
+                                <span>${element.crew_capacity}</span>
+                            </div>
+    
     
                         </div>
                     </article>
