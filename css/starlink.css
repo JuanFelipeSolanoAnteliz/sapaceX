@@ -1,3 +1,34 @@
+*{  
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+
+body{
+
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+}
+
+
+.bg{
+    position: absolute;
+    width: 100%;
+    /* height: 100%; */
+    z-index: -2;
+}
+
+
+.Loading{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    gap: 15px;
+}
+
 .footer__section a > img{
     width: 100%;
     height: 100%;

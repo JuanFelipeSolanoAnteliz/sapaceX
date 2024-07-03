@@ -98,7 +98,7 @@ export const capsuleContent = async (docsJson) =>{
     
         <footer class="footer">
         <section class="footer__section">
-        <section class="footer__section">
+        
         <a href="../index.html">
             <img src="../storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
             <p>rockets</p>

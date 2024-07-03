@@ -315,7 +315,7 @@ export const rocketPageContent = async (docs)=>{
     </a>
     
     <a href="views/roadster.html">
-        <img src="./storage/img/payf.svg" style="height: 60%;" alt="">
+        <img src="./storage/img/road.svg" style="height: 60%;" alt="">
         <p>roadster</p>
     </a>    
     </section>
