@@ -16,14 +16,13 @@ export const roadContent  = async (docs)=>{
                             Info
                     </div>
                     <div class="intercalado">
-                        <p><span>Legacy id:</span> <span>${element.legacy_id}</span></p>
-                        <p><span>Model:</span> <span>${element.model === null ? 'none': element.model}</span></p>
-                        <p><span>Type:</span> <span>${element.type  === null ? 'none':element.type}</span></p>
-                        <p><span>roles:</span> <span>${element.roles && element.roles.length > 0 ? element.roles.join(', ') : ''}</span></p>
-                        <p><span>Imo</span> <span>${element.imo === null ? 'none': element.imo }</span></p>
-                        <p><span>Mmsi</span> <span>${element.mmsi === null ? 'none':element.mmsi }</span></p>
-                        <p><span>Abs</span> <span>${element.abs === null ? 'none': element.abs }</span></p>
-                        <p><span>Class</span> <span>${element.class === null ? 'none':element.class }</span></p>
+                        <p><span>launch Date: </span> <span>${element.launch_date_utc}</span></p>
+                        <p><span>launch_date_unix: </span> <span>${element.launch_date_unix === null ? 'none': element.launch_date_unix}</span></p>
+                        <p><span>launch_mass_kg: </span> <span>${element.launch_mass_kg  === null ? 'none':element.launch_mass_kg}</span></p>
+                        <p><span>norad_id: </span> <span>${element.norad_id === null ? 'none': element.norad_id }</span></p>
+                        <p><span>epoch_jd: </span> <span>${element.epoch_jd === null ? 'none':element.epoch_jd }</span></p>
+                        <p><span>orbit_type: </span> <span>${element.orbit_type === null ? 'none': element.orbit_type }</span></p>
+                        <p><span>apoapsis_au: </span> <span>${element.apoapsis_au === null ? 'none':element.apoapsis_au }</span></p>
                     </div>
 
                 </article>
@@ -36,7 +35,7 @@ export const roadContent  = async (docs)=>{
                         </div>
                         
                             <article class="cat">
-                            <img src="${element.image  === null ? '../storage/img/shipasd.jpg' : element.image }" referrerpolicy="no-referrer">
+                            ${Array.isArray(element.flickr_images) && element.flickr_images.length > 0 ? element.flickr_images.map(image => `<div class="img__countain"> <img src="${image}"> </div>`).join('') : ''}
                             </article>
                         
                         </div>
@@ -52,12 +51,10 @@ export const roadContent  = async (docs)=>{
                         </div>
 
                         <div class="launches">
-                        <p>launches</p>
-                        <div class="intercalado">
-                                <p></p>
-                                ${Array.isArray(element.launches) && element.launches.length > 0 ? element.launches.map(launch =>`<p>${launch}</p>`).join(''): `<p>Here aren't any Launc :/</p>`}
-                            </div>
-                            
+                        <p>Details</p>
+                                <p>
+                                    ${element.details}
+                                </p>
                         </div>
         
                     </section>
@@ -71,14 +68,14 @@ export const roadContent  = async (docs)=>{
                     </div>
                     <div class= "intercalado" >
                         <p><span>Mass kg</span> <span>${element.mass_kg === null ? 'none': element.mass_kg }</span></p>
-                        <p><span> Status: </span> <span>${element.status === null || element.status === "" ? 'none': element.status} </span></p>
-                        <p><span>Speed kn: </span> <span>${element.speed_kn === null ? 'none': element.speed_kn}</span></p>
-                        <p><span>Course deg: </span> <span>${element.course_deg === null ? 'none': element.course_deg}</span></p>
-                        <p><span>Mass lbs: </span> <span>${element.mass_lbs == null ? 'none': element.mass_lbs}</span></p>
-                        <p><span>Built: </span> <span>${element.year_built === null ? 'none' : element.year_built}</span></p>
-                        <p><span>Home port: </span> <span>${element.home_port === null ? 'none' : element.home_port }</span></p>
-                        <p><span>Latitude: </span> <span>${element.latitude === null ? 'none' : element.latitude }</span></p>
-                        <p><span>Longitude:</span> <span>${element.longitude === null ? 'none' : element.longitude }</span></p>
+                        <p><span> inclination: </span> <span>${element.inclination === null || element.inclination === "" ? 'none': element.status} </span></p>
+                        <p><span>longitude: </span> <span>${element.longitude === null ? 'none': element.longitude}</span></p>
+                        <p><span>periapsis arg: </span> <span>${element.periapsis_arg === null ? 'none': element.periapsis_arg}</span></p>
+                        <p><span>period days: </span> <span>${element.period_days == null ? 'none': element.period_days}</span></p>
+                        <p><span>speed kph: </span> <span>${element.speed_kph === null ? 'none' : element.speed_kph}</span></p>
+                        <p><span>earth distance: </span> <span>${element.earth_distance_km === null ? 'none' : element.earth_distance_km }</span></p>
+                        <p><span>mars distance: </span> <span>${element.mars_distance_km === null ? 'none' : element.mars_distance_km }</span></p>
+                        <p><span>mars distance:</span> <span>${element.mars_distance_mi === null ? 'none' : element.mars_distance_mi }</span></p>
                     </div>
                     
                 </article>
@@ -142,14 +139,13 @@ export const roadContent  = async (docs)=>{
             <p>payloads</p>
         </a>
 
+        <a href="roadster.html">
+            <img src="../storage/img/road.svg" style="height: 60%;" alt="">
+            <p>roadster</p>
+        </a>
+
         </section>
-        <article class=pagination__content>
-          <div id="pagination" class="pagination">
-            <article id="Prev">Prev</article>
-                <section id="number__page" ></section>
-            <article id="Next">Next</article>
-          </div> 
-        </article>
+        
     </footer>
         `;
     });

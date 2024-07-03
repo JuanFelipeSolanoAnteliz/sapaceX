@@ -98,6 +98,7 @@ export const capsuleContent = async (docsJson) =>{
     
         <footer class="footer">
         <section class="footer__section">
+        <section class="footer__section">
         <a href="../index.html">
             <img src="../storage/img/rocket-turned-to-upper-right-svgrepo-com.svg" alt="" style="height: 60%;">
             <p>rockets</p>
@@ -151,8 +152,12 @@ export const capsuleContent = async (docsJson) =>{
             <p>payloads</p>
         </a>
 
-        </section>
+        <a href="roadster.html">
+            <img src="../storage/img/road.svg" style="height: 60%;" alt="">
+            <p>roadster</p>
+        </a>
 
+        </section>
         <article class=pagination__content>
           <div id="pagination" class="pagination">
             <article id="Prev">Prev</article>

@@ -350,6 +350,11 @@ export const dragonsContent = async (docs)=>{
         <p>payloads</p>
     </a>
 
+    <a href="roadster.html">
+        <img src="../storage/img/road.svg" style="height: 60%;" alt="">
+        <p>roadster</p>
+    </a>
+
     </section>
     <article class=pagination__content>
       <div id="pagination" class="pagination">
