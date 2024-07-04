@@ -283,6 +283,21 @@ export const oneRoad = async ()=>{
     return data;
 };
 
-export const oneStarlink = async ()=>{
-    
+export const oneStarlink = async (page)=>{
+
+     let config ={
+        method:'POST',
+        headers:{"content-type":"application/json"},
+        body:JSON.stringify({
+            query:{},
+            options:{
+                limit:1,
+                page:page
+            }
+        })
+    };
+
+    let res = await fetch(`https://api.spacexdata.com/v4/starlink/query`,config);
+    let data = await res.json();
+    return data;
 }

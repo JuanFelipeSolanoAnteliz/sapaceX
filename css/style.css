@@ -259,7 +259,7 @@ body{
     flex-direction: column;
     width: 20%;
     height: 80%;
-    max-height: 400px;
+    /* max-height: 400px; */
     padding-inline: 10px;
     overflow-y: scroll;
     scrollbar-width: none;
