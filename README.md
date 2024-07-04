@@ -17,4 +17,4 @@ Para comenzar con el proyecto, primero se leyó la documentación del API de Spa
 
 Testeo del endpoint All rockets:
 
-![alt text](image.png)
+![alt text](storage/img/image.png)
