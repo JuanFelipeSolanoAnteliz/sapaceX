@@ -373,7 +373,8 @@ body{
     border-top-left-radius: 100px;
     border-top-right-radius: 100px;
     gap:10px;
-    padding-inline:40px ;
+    padding-inline: 40px;
+    padding-top: 10px;
 }
 
 .footer__section a{

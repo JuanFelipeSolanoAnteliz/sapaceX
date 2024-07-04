@@ -123,17 +123,17 @@ export const shipContent = async(jsonDocs)=>{
             <img src="../storage/img/company.svg" style="height: 60%;" alt="">
             <p>company</p>
         </a>
-    
+        
         <a href="dragons.html">
             <img src="../storage/img/dragonsFoot.svg" style="height: 60%;" alt="">
             <p>dragons</p>
         </a>
-    
+        
         <a href="history.html">
             <img src="../storage/img/histo.svg" style="height: 60%;" alt="">
             <p>history</p>
         </a>
-    
+        
         
         <a href="launchpads.html">
             <img src="../storage/img/asd.svg" style="height: 60%;" alt="">
@@ -143,11 +143,17 @@ export const shipContent = async(jsonDocs)=>{
             <img src="../storage/img/payf.svg" style="height: 60%;" alt="">
             <p>payloads</p>
         </a>
-
+        
         <a href="roadster.html">
             <img src="../storage/img/road.svg" style="height: 60%;" alt="">
             <p>roadster</p>
         </a>
+        
+        <a href="starlink.html">
+            <img src="../storage/img/satellite-space-svgrepo-com.svg" style="height: 60%;" alt="">
+            <p>starlink</p>
+        </a>
+    
         </section>
 
         <article class=pagination__content>
